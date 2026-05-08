@@ -1,0 +1,11 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow admin files and templates
+Disallow: /CLAUDE.md
+Disallow: /ADSENSE.md
+Disallow: /*-template.html
+
+# Sitemap location
+Sitemap: https://woshiliangwenfeng.github.io/sitemap.xml

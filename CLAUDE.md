@@ -58,6 +58,11 @@ The site is automatically deployed to GitHub Pages from the `main` branch. Push 
 - Use proper heading hierarchy (H1 > H2 > H3 > H4)
 - Include internal links between related content
 - Add alt text for images
+- All pages must include Meta keywords, author, robots, and canonical tags
+- All pages must include Open Graph and Twitter Card meta tags
+- Add structured data (JSON-LD) for rich search results
+- Update sitemap.xml when adding new pages
+- Keep favicon.ico and og-image.jpg in root directory
 
 ## Design System
 
