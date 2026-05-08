@@ -115,6 +115,12 @@ Ensure footer navigation is consistent across all pages and includes link to Pri
 
 ## AdSense Integration
 
+### Google Analytics
+- All pages include Google Analytics tracking code (G-35CP87Q5L4)
+- The tracking script is placed in the `<head>` section, right after the charset meta tag
+- Tracks: page views, user engagement, and traffic patterns
+- No changes needed for new pages - analytics automatically included in templates
+
 ### Ad Placement Strategy
 - **Top Banner:** 728x90 above main content
 - **In-article:** Between content sections (300x250)
