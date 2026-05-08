@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="16x16">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="32x32">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Analytics -->
+<!-- Reorganized directory structure: docs/, pages/, guides/ -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-35CP87Q5L4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-35CP87Q5L4');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Essential gaming tools and software recommendations - from FPS boosters to recording software, discover the best tools to enhance your gaming experience.">
+    <meta name="keywords" content="gaming tools, FPS boosters, recording software, game launchers, voice chat, mod managers, gaming utilities">
+    <meta name="author" content="Game Guides Hub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://woshiliangwenfeng.github.io/pages/tools.html">
+    <title>Gaming Tools - Game Guides Hub</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Gaming Tools - Game Guides Hub">
+    <meta property="og:description" content="Essential gaming tools and software recommendations to enhance your gaming experience.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://woshiliangwenfeng.github.io/tools.html">
+    <meta property="og:image" content="https://woshiliangwenfeng.github.io/og-image.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Game Guides Hub">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gaming Tools - Game Guides Hub">
+    <meta name="twitter:description" content="Essential gaming tools and software recommendations to enhance your gaming experience.">
+    <meta name="twitter:image" content="https://woshiliangwenfeng.github.io/og-image.jpg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #0a0e27;
+            color: #e8e8e8;
+            line-height: 1.6;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+            z-index: 1000;
+        }
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .logo-icon {
+            font-size: 1.8rem;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        .nav-links a {
+            color: #a0aec0;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem 0;
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #fff;
+        }
+        .nav-links a.active {
+            border-bottom: 2px solid #667eea;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 100px 20px 40px;
+        }
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .page-header p {
+            color: #a0aec0;
+            font-size: 1.2rem;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .tool-card {
+            background: rgba(30, 35, 60, 0.6);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+        .tool-card:hover {
+            background: rgba(30, 35, 60, 0.8);
+            border-color: rgba(102, 126, 234, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .tool-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .tool-icon {
+            font-size: 3rem;
+        }
+        .tool-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+        }
+        .tool-description {
+            color: #a0aec0;
+            margin-bottom: 1.5rem;
+        }
+        .tool-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        .tool-features li {
+            color: #a0aec0;
+            padding: 0.3rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.9rem;
+        }
+        .tool-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        .tool-link {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        .tool-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+        }
+        footer {
+            background: rgba(5, 8, 20, 0.8);
+            border-top: 1px solid rgba(102, 126, 234, 0.2);
+            padding: 2rem;
+            text-align: center;
+            color: #718096;
+            font-size: 0.9rem;
+            margin-top: 3rem;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .footer-links a {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: #667eea;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .nav-inner {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .container {
+                padding-top: 180px;
+            }
+            .tools-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">🎮</span>
+                GameGuidesHub
+            </a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="guides.html">Game Guides</a>
+                <a href="tools.html" class="active">Tools</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Essential Gaming Tools</h1>
+            <p>Discover the best software to enhance your gaming experience</p>
+        </div>
+
+        <div class="tools-grid">
+            <div class="tool-card">
+                <div class="tool-header">
+                    <span class="tool-icon">🖥️</span>
+                    <h3 class="tool-title">FPS Boosters</h3>
+                </div>
+                <p class="tool-description">Optimize your system for maximum gaming performance</p>
+                <ul class="tool-features">
+                    <li>MSI Afterburner</li>
+                    <li>Razer Cortex</li>
+                    <li>Game Booster</li>
+                </ul>
+                <a href="#" class="tool-link">Learn More</a>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-header">
+                    <span class="tool-icon">🎬</span>
+                    <h3 class="tool-title">Recording Software</h3>
+                </div>
+                <p class="tool-description">Capture and stream your gameplay with ease</p>
+                <ul class="tool-features">
+                    <li>OBS Studio (Free)</li>
+                    <li>Streamlabs OBS</li>
+                    <li>NVIDIA ShadowPlay</li>
+                </ul>
+                <a href="#" class="tool-link">Learn More</a>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-header">
+                    <span class="tool-icon">🎤</span>
+                    <h3 class="tool-title">Voice Chat</h3>
+                </div>
+                <p class="tool-description">Stay connected with your gaming squad</p>
+                <ul class="tool-features">
+                    <li>Discord</li>
+                    <li>TeamSpeak</li>
+                    <li>Mumble</li>
+                </ul>
+                <a href="#" class="tool-link">Learn More</a>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-header">
+                    <span class="tool-icon">⚙️</span>
+                    <h3 class="tool-title">Mod Managers</h3>
+                </div>
+                <p class="tool-description">Enhance your games with mods and customizations</p>
+                <ul class="tool-features">
+                    <li>Vortex</li>
+                    <li>Mod Organizer 2</li>
+                    <li>Fabric/Forge</li>
+                </ul>
+                <a href="#" class="tool-link">Learn More</a>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-header">
+                    <span class="tool-icon">🎮</span>
+                    <h3 class="tool-title">Game Launchers</h3>
+                </div>
+                <p class="tool-description">Manage your entire game library</p>
+                <ul class="tool-features">
+                    <li>Steam</li>
+                    <li>Epic Games Launcher</li>
+                    <li>GOG Galaxy</li>
+                </ul>
+                <a href="#" class="tool-link">Learn More</a>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-header">
+                    <span class="tool-icon">📊</span>
+                    <h3 class="tool-title">Performance Monitors</h3>
+                </div>
+                <p class="tool-description">Track your system stats in real-time</p>
+                <ul class="tool-features">
+                    <li>HWMonitor</li>
+                    <li>Core Temp</li>
+                    <li>GPU-Z</li>
+                </ul>
+                <a href="#" class="tool-link">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Game Guides Hub. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="../index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </div>
+    </footer>
+</body>
+</html>

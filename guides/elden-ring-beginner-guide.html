@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="16x16">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="32x32">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-35CP87Q5L4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-35CP87Q5L4');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Elden Ring complete beginner guide and walkthrough. Learn essential tips, character creation, combat mechanics, and starting areas for Elden Ring.">
+    <meta name="keywords" content="Elden Ring, beginner guide, walkthrough, FromSoftware, RPG guide,elden ring tips,elden ring starting class">
+    <meta name="author" content="Game Guides Hub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://woshiliangwenfeng.github.io/guides/elden-ring-beginner-guide.html">
+    <title>Elden Ring Complete Beginner Guide | Game Guides Hub</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Elden Ring Complete Beginner Guide | Game Guides Hub">
+    <meta property="og:description" content="Elden Ring complete beginner guide and walkthrough. Learn essential tips, character creation, combat mechanics, and starting areas.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://woshiliangwenfeng.github.io/elden-ring-beginner-guide.html">
+    <meta property="og:image" content="https://woshiliangwenfeng.github.io/og-image.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Game Guides Hub">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Elden Ring Complete Beginner Guide | Game Guides Hub">
+    <meta name="twitter:description" content="Elden Ring complete beginner guide and walkthrough. Learn essential tips, character creation, combat mechanics, and starting areas.">
+    <meta name="twitter:image" content="https://woshiliangwenfeng.github.io/og-image.jpg">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Elden Ring Complete Beginner Guide",
+        "description": "Elden Ring complete beginner guide and walkthrough. Learn essential tips, character creation, combat mechanics, and starting areas.",
+        "url": "https://woshiliangwenfeng.github.io/elden-ring-beginner-guide.html",
+        "datePublished": "2026-04-01",
+        "dateModified": "2026-05-08",
+        "author": {
+            "@type": "Organization",
+            "name": "Game Guides Hub"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Game Guides Hub",
+            "url": "https://woshiliangwenfeng.github.io/"
+        },
+        "about": {
+            "@type": "VideoGame",
+            "name": "Elden Ring",
+            "genre": ["Action RPG", "Open World"],
+            "platform": ["PlayStation 5", "Xbox Series X/S", "PC"],
+            "applicationCategory": "Game"
+        }
+    }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #0a0e27;
+            color: #e8e8e8;
+            line-height: 1.6;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+            z-index: 1000;
+        }
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .logo-icon {
+            font-size: 1.8rem;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        .nav-links a {
+            color: #a0aec0;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem 0;
+        }
+        .nav-links a:hover {
+            color: #fff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px 40px;
+        }
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+        }
+        .main-content {
+            min-width: 0;
+        }
+        .game-header {
+            background: linear-gradient(135deg, rgba(30, 35, 60, 0.8) 0%, rgba(20, 25, 45, 0.8) 100%);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .game-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .game-meta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+        .rating {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: rgba(102, 126, 234, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            color: #667eea;
+            font-weight: 600;
+        }
+        .game-description {
+            color: #a0aec0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .ad-placeholder {
+            background: rgba(30, 35, 60, 0.6);
+            border: 1px dashed rgba(102, 126, 234, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            color: #667eea;
+            font-size: 0.9rem;
+            margin: 2rem 0;
+        }
+        .ad-placeholder span {
+            display: block;
+            font-size: 0.8rem;
+            color: #718096;
+            margin-top: 0.5rem;
+        }
+        .toc {
+            background: rgba(20, 25, 45, 0.8);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            position: static;
+        }
+        .toc-title {
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .toc-list li {
+            margin-bottom: 0.5rem;
+        }
+        .toc-list a {
+            color: #a0aec0;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            display: block;
+            padding: 0.3rem 0;
+        }
+        .toc-list a:hover {
+            color: #667eea;
+            padding-left: 0.5rem;
+        }
+        .toc-list a.active {
+            color: #667eea;
+            font-weight: 600;
+        }
+        .content-section {
+            background: rgba(30, 35, 60, 0.4);
+            border: 1px solid rgba(102, 126, 234, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .content-section h2 {
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            scroll-margin-top: 100px;
+        }
+        .content-section h3 {
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.8rem;
+        }
+        .content-section h4 {
+            color: #a0aec0;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1rem 0 0.6rem;
+        }
+        .content-section p {
+            color: #a0aec0;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        .content-section ul,
+        .content-section ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+            color: #a0aec0;
+        }
+        .content-section li {
+            margin: 0.5rem 0;
+            line-height: 1.7;
+        }
+        .content-section strong {
+            color: #fff;
+        }
+        .content-section em {
+            color: #e8e8e8;
+        }
+        .content-section code {
+            background: rgba(102, 126, 234, 0.2);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: #667eea;
+        }
+        .screenshot {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 8px;
+            margin: 1.5rem auto;
+            display: block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.2rem;
+        }
+        .pro-tip {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        .pro-tip-title {
+            color: #667eea;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .sidebar {
+            min-width: 0;
+        }
+        .sidebar-widget {
+            background: rgba(30, 35, 60, 0.6);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .widget-title {
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .widget-content {
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+        .widget-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .widget-content li {
+            margin-bottom: 0.8rem;
+        }
+        .widget-content a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .widget-content a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+        .related-guides {
+            margin-top: 3rem;
+        }
+        .related-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .related-card {
+            background: rgba(30, 35, 60, 0.6);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+        .related-card:hover {
+            background: rgba(30, 35, 60, 0.8);
+            border-color: rgba(102, 126, 234, 0.4);
+            transform: translateY(-3px);
+        }
+        .related-card h3 {
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .related-card p {
+            color: #a0aec0;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        footer {
+            background: rgba(5, 8, 20, 0.8);
+            border-top: 1px solid rgba(102, 126, 234, 0.2);
+            padding: 2rem;
+            text-align: center;
+            color: #718096;
+            font-size: 0.9rem;
+            margin-top: 3rem;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .footer-links a {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: #667eea;
+        }
+        @media (max-width: 1024px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .toc {
+                position: static;
+                margin-bottom: 2rem;
+            }
+            .sidebar {
+                display: none;
+            }
+        }
+        @media (max-width: 768px) {
+            .game-title {
+                font-size: 1.8rem;
+            }
+            .nav-inner {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .container {
+                padding-top: 180px;
+            }
+            .content-section {
+                padding: 1.5rem;
+            }
+            .game-header {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">🎮</span>
+                GameGuidesHub
+            </a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../pages/guides.html">Game Guides</a>
+                <a href="../pages/tools.html">Tools</a>
+                <a href="../pages/about.html">About</a>
+                <a href="../pages/contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="main-content">
+                <div class="game-header">
+                    <h1 class="game-title">Elden Ring Complete Beginner Guide</h1>
+
+                    <div class="game-meta">
+                        <div class="rating">⭐ 4.9/5</div>
+                        <div class="meta-item">📅 Published: June 2024</div>
+                        <div class="meta-item">🎮 Platforms: PS5, Xbox Series X/S, PC</div>
+                        <div class="meta-item">⏱️ Reading time: 25 mins</div>
+                    </div>
+
+                    <p class="game-description">
+                        The ultimate beginner's guide to Elden Ring. Learn essential mechanics, character creation tips, starting areas, and combat strategies to survive the Lands Between.
+                    </p>
+                </div>
+
+                <!-- AdSense Top Banner -->
+                <div class="ad-placeholder">
+                    📱 AdSense Top Banner (728x90)
+                    <span>Place your top banner ad code here</span>
+                </div>
+
+                <!-- Table of Contents -->
+                <div class="toc">
+                    <div class="toc-title">📋 Table of Contents</div>
+                    <ul class="toc-list">
+                        <li><a href="#section1">1. Getting Started</a></li>
+                        <li><a href="#section2">2. Character Creation</a></li>
+                        <li><a href="#section3">3. Essential Controls</a></li>
+                        <li><a href="#section4">4. Starting Areas Guide</a></li>
+                        <li><a href="#section5">5. Combat Fundamentals</a></li>
+                        <li><a href="#section6">6. Early Game Tips</a></li>
+                        <li><a href="#section7">7. First Boss Guide</a></li>
+                        <li><a href="#section8">8. Essential Items</a></li>
+                        <li><a href="#section9">9. FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Getting Started -->
+                <div class="content-section">
+                    <h2 id="section1">1. Getting Started</h2>
+                    <p>Welcome to the Lands Between! Elden Ring is FromSoftware's most accessible Souls-like game, but it still demands patience and skill. This guide will help you master the basics and start your journey on the right foot.</p>
+
+                    <div class="pro-tip">
+                        <div class="pro-tip-title">💡 Pro Tip</div>
+                        <p>Don't worry about dying in Elden Ring - it's part of the learning process. Every death teaches you something new about enemy patterns, timing, and mechanics.</p>
+                    </div>
+
+                    <h3>Understanding the Tarnished's Journey</h3>
+                    <p>As a Tarnished, you've been exiled from the Erdtree and must seek the Elden Ring to become Elden Lord. The world is open and non-linear, allowing you to explore at your own pace and tackle challenges in any order.</p>
+
+                    <h4>Key Game Features for Beginners:</h4>
+                    <ul>
+                        <li><strong>Open World Design:</strong> Unlike previous FromSoftware games, Elden Ring features a vast interconnected world</li>
+                        <li><strong>Mount Travel:</strong> Torrent, your spectral steed, allows fast travel and mounted combat</li>
+                        <li><strong>Asynchronous Multiplayer:</strong> See other players' spirits and messages, summon help</li>
+                        <li><strong>Customizable Difficulty:</strong> The game doesn't have difficulty settings, but you can adjust through builds and coop</li>
+                        <li><strong>Grace Sites:</strong> Save points, fast travel, and respawn locations throughout the world</li>
+                    </ul>
+
+                    <!-- Screenshot placeholder -->
+                    <div class="screenshot">
+                        📸 Limgrave starting area screenshot
+                    </div>
+                </div>
+
+                <!-- Character Creation -->
+                <div class="content-section">
+                    <h2 id="section2">2. Character Creation</h2>
+
+                    <p>Character creation in Elden Ring is flexible, and you can respec your character later. However, starting with the right foundation can make your early game experience much smoother.</p>
+
+                    <h3>Recommended Starting Classes</h3>
+                    <p>Here are the best classes for different playstyles:</p>
+
+                    <div class="pro-tip">
+                        <div class="pro-tip-title">🏆 Best Overall: Vagabond</div>
+                        <p>The Vagabond is widely considered the best starting class for most players. It offers balanced stats, decent equipment, and the ability to use both melee and ranged attacks effectively.</p>
+                    </div>
+
+                    <h4>Class Breakdown:</h4>
+                    <ul>
+                        <li><strong>Vagabond:</strong> High stat total, good all-rounder, great equipment. Best for: First-time players, hybrid builds</li>
+                        <li><strong>Warrior:</strong> High strength and vitality, excellent melee combatant. Best for: Pure strength builds, melee focus</li>
+                        <li><strong>Astrologer:</strong> High intelligence, starts with magic. Best for: Magic builds, ranged combat</li>
+                        <li><strong>Prisoner:</strong> Balanced stats with focus on dexterity and intelligence. Best for: Dex-int builds, mixed combat</li>
+                        <li><strong>Confessor:</strong> High faith, starts with healing miracles. Best for: Faith builds, support playstyle</li>
+                        <li><strong>Wretch:</strong> All stats at 10, level 1. Best for: Min-maxing, experienced players who want total control</li>
+                    </ul>
+
+                    <h3>Understanding Stats</h3>
+                    <p>Each stat affects different aspects of your character:</p>
+                    <ul>
+                        <li><strong>Vigor:</strong> Increases health points and resistance</li>
+                        <li><strong>Mind:</strong> Increases focus points for magic and FP</li>
+                        <li><strong>Endurance:</strong> Increases stamina and equipment load</li>
+                        <li><strong>Strength:</strong> Increases melee damage and weapon requirements</li>
+                        <li><strong>Dexterity:</strong> Increases attack speed, casting speed, and certain weapon damage</li>
+                        <li><strong>Intelligence:</strong> Increases sorcery damage and requirements</li>
+                        <li><strong>Faith:</strong> Increases incantations and healing miracles</li>
+                        <li><strong>Arcane:</strong> Increases discovery rate and certain weapon scaling</li>
+                    </ul>
+
+                    <div class="pro-tip">
+                        <div class="pro-tip-title">⚠️ Important Note</div>
+                        <p>You can respec your character later by defeating Rennala, Queen of the Moon and using a Larval Tear. So don't stress too much about early stat allocation!</p>
+                    </div>
+                </div>
+
+                <!-- Essential Controls -->
+                <div class="content-section">
+                    <h2 id="section3">3. Essential Controls</h2>
+
+                    <p>Mastering Elden Ring's controls is crucial for survival. Here are the essential inputs for PC and console players:</p>
+
+                    <!-- In-article Ad -->
+                    <div class="ad-placeholder">
+                        📱 AdSense In-article Unit
+                        <span>Place your in-article ad code here</span>
+                    </div>
+
+                    <h3>Basic Movement Controls</h3>
+                    <ul>
+                        <li><strong>Movement:</strong> WASD / Left Analog Stick</li>
+                        <li><strong>Sprint:</strong> Shift / B Button (Hold while moving)</li>
+                        <li><strong>Roll/Dodge:</strong> Space / Circle / B Button</li>
+                        <li><strong>Jump:</strong> F / X / A Button</li>
+                        <li><strong>Crouch:</strong> Ctrl / Circle (Hold)</li>
+                    </ul>
+
+                    <h3>Combat Controls</h3>
+                    <ul>
+                        <li><strong>Light Attack:</strong> Left Mouse / R2 / RT Button</li>
+                        <li><strong>Heavy Attack:</strong> Right Mouse / R1 / RB Button</li>
+                        <li><strong>Guard:</strong> Middle Mouse / L1 / LB Button</li>
+                        <li><strong>Parry:</strong> Guard just before impact (requires shield)</li>
+                        <li><strong>Two-Hand:</strong> Ctrl / Triangle / Y Button</li>
+                    </ul>
+
+                    <h3>Menu Controls</h3>
+                    <ul>
+                        <li><strong>Inventory:</strong> I / Touchpad / Start Button</li>
+                        <li><strong>Map:</strong> M / D-pad Up / Select Button</li>
+                        <li><strong>Quick Menu:</strong> E / D-pad Right</li>
+                        <li><strong>Gesture:</strong> G / D-pad Left / Touchpad Hold</li>
+                    </ul>
+
+                    <h3>Advanced Techniques</h3>
+                    <p>Once comfortable with basics, practice these advanced mechanics:</p>
+                    <ul>
+                        <li><strong>Sprint Attacks:</strong> Sprint + Light Attack does lunging strike with extra range</li>
+                        <li><strong>Jump Attacks:</strong> Jump + Light Attack does jumping attack (good for gap closing)</li>
+                        <li><strong>Bloodhound Step:</strong> Dodge repeatedly while locked on for quick repositioning</li>
+                        <li><strong>Charged Attacks:</strong> Hold heavy attack button for charged strikes (certain weapons only)</li>
+                        <li><strong>Weapon Arts:</strong> L2 / LT + Attack button for special moves</li>
+                    </ul>
+                </div>
+
+                <!-- Starting Areas Guide -->
+                <div class="content-section">
+                    <h2 id="section4">4. Starting Areas Guide</h2>
+
+                    <p>After creating your character and watching the opening cutscene, you'll arrive in Limgrave. Here's how to navigate the starting areas:</p>
+
+                    <h3>Stranded Graveyard</h3>
+                    <p>Your initial area may seem intimidating, but the correct path is actually straightforward:</p>
+                    <ol>
+                        <li><strong>Ignore the giant monster</strong> - You're not meant to fight it yet</li>
+                        <li><strong>Take the path with walking enemies</strong> - This leads to the actual first area</li>
+                        <li><strong>Follow the cliff edge</strong> - Stay close to the wall on your left</li>
+                        <li><strong>Enter the cave</strong> - This is the correct path to Limgrave</li>
+                    </ol>
+
+                    <div class="screenshot">
+                        📸 Stranded Graveyard path screenshot
+                    </div>
+
+                    <h3>Limgrave</h3>
+                    <p>Limgrave serves as your tutorial area. Focus on:</p>
+                    <ul>
+                        <li><strong>Exploring the main building</strong> - Contains important items and the tutorial boss</li>
+                        <li><strong>Finding the first Site of Grace</strong> - Located after the first boss encounter</li>
+                        <li><strong>Collecting Smithing Stones</strong> - Essential for early weapon upgrades</li>
+                        <li><strong>Learning combat basics</strong> - The enemies here provide good practice</li>
+                    </ul>
+
+                    <h3>Recommended Early Path</h3>
+                    <p>After Limgrave, most players should follow this progression:</p>
+                    <ol>
+                        <li><strong>Stormveil Castle:</strong> The main first area, contains essential progression items</li>
+                        <li><strong>Weeping Peninsula:</strong> Accessible early, contains Margit, the Fell Omen (optional early boss)</li>
+                        <li><strong>Liurnia of the Lakes:</strong> South of Stormveil, contains Academy glintstone sorcery</li>
+                        <li><strong>Caelid:</strong> More challenging area, best tackled after Stormveil</li>
+                    </ol>
+
+                    <div class="pro-tip">
+                        <div class="pro-tip-title">🗺️ Alternative Path</div>
+                        <p>Experienced players can head straight to Caelid, but it's much more challenging. Save this area for after you've leveled up a bit and acquired better equipment.</p>
+                    </div>
+                </div>
+
+                <!-- Combat Fundamentals -->
+                <div class="content-section">
+                    <h2 id="section5">5. Combat Fundamentals</h2>
+
+                    <p>Combat in Elden Ring relies on timing, positioning, and understanding enemy patterns. Master these fundamentals to survive the Lands Between.</p>
+
+                    <h3>The Importance of Positioning</h3>
+                    <ul>
+                        <li><strong>Stay Mobile:</strong> Don't stand still - constant movement makes you harder to hit</li>
+                        <li><strong>Circle Enemies:</strong> Strafe around larger enemies while waiting for openings</li>
+                        <li><strong>Use Terrain:</strong> High ground and obstacles can give you advantages</li>
+                        <li><strong>Maintain Spacing:</strong> Keep enemies at optimal weapon range</li>
+                    </ul>
+
+                    <h3>Dodge Rolling Mastery</h3>
+                    <p>Rolling is your primary defensive tool. Practice these techniques:</p>
+                    <ul>
+                        <li><strong>Watch Telegraphs:</strong> Enemy attacks have clear wind-up animations</li>
+                        <li><strong>Roll Timing:</strong> Dodge just before the attack connects</li>
+                        <li><strong>Roll Direction:</strong> Roll toward or through attacks, not always away</li>
+                        <li><strong>Manage Stamina:</strong> Don't spam rolls - running out of stamina is fatal</li>
+                    </ul>
+
+                    <h3>Poise and Staggering</h3>
+                    <p>Understanding poise is key to effective combat:</p>
+                    <ul>
+                        <li><strong>What is Poise?</strong> It's enemy resistance to being staggered</li>
+                        <li><strong>Breaking Poise:</strong> Heavy attacks and repeated hits reduce enemy poise</li>
+                        <li><strong>Poise Breaks:</strong> When poise is broken, enemies are vulnerable to critical hits</li>
+                        <li><strong>Critical Strikes:</strong> Perform these with R2/RB when enemies are staggered</li>
+                    </ul>
+
+                    <div class="screenshot">
+                        📸 Combat and poise system screenshot
+                    </div>
+
+                    <h3>Parrying and Ripostes</h3>
+                    <p>High-level combat technique that rewards perfect timing:</p>
+                    <ul>
+                        <li><strong>Parry Timing:</strong> Shield bash must connect just as enemy attack lands</li>
+                        <li><strong>Riposte:</strong> Successful parries open enemies for critical counter-attacks</li>
+                        <li><strong>Practice Weapons:</strong> Small shields (Buckler, Brass Shield) are best for learning</li>
+                        <li><strong>Risk vs Reward:</strong> Failed parries leave you vulnerable, but success deals massive damage</li>
+                    </ul>
+
+                    <div class="pro-tip">
+                        <div class="pro-tip-title">⚔️ Parry Practice</div>
+                        <p>Practice parrying on weaker enemies in Limgrave before attempting on bosses. Godrick the Grafted is an excellent boss for parry practice with his slow, telegraphed attacks.</p>
+                    </div>
+                </div>
+
+                <!-- Early Game Tips -->
+                <div class="content-section">
+                    <h2 id="section6">6. Early Game Tips</h2>
+
+                    <p>These tips will give you a significant advantage in your first 20-30 hours:</p>
+
+                    <h3>Essential Early Items</h3>
+                    <ul>
+                        <li><strong>Torrent (Mount):</strong> Acquired early - use him for fast travel and safe exploration</li>
+                        <li><strong>Spirit Ashes:</strong> Summonable allies that can turn the tide of battle</li>
+                        <li><strong>Crimson Tears:</strong> Flask upgrades that increase healing effectiveness</li>
+                        <li><strong>Cerulean Tears:</strong> Flask upgrades that increase FP restoration</li>
+                        <li><strong>Glintstone Sorcery:</strong> Found in Liurnia Academy - powerful early magic</li>
+                    </ul>
+
+                    <h3>Level 1 Weapon Recommendations</h3>
+                    <ul>
+                        <li><strong>Broadsword:</strong> Balanced starter, easy to upgrade early</li>
+                        <li><strong>Soldier's Shield:</strong> 100% physical block, great for learning combat</li>
+                        <li><strong>Halberd:</strong> Long reach, good stagger potential</li>
+                        <li><strong>Uchigatana Blade:</strong> Found in Limgrave - excellent early-game weapon</li>
+                        <li><strong>Claymore:</strong> Found in Stormveil - high strength scaling</li>
+                    </ul>
+
+                    <h3>Smithing Stone Locations</h3>
+                    <p>Weapon upgrades are crucial. Find Smithing Stones here:</p>
+                    <ul>
+                        <li><strong>Limgrave Tunnels:</strong> Several stones in the underground area</li>
+                        <li><strong>Stormveil:</strong> Abundant stones throughout the castle</li>
+                        <li><strong>Sell Duplicate Gear:</strong> Turn unused weapons and armor into Smithing Stones</li>
+                    </ul>
+
+                    <div class="pro-tip">
+                        <div class="pro-tip-title">🔧 Upgrade Priority</div>
+                        <p>Prioritize upgrading your main weapon. A +10 weapon significantly outperforms multiple unupgraded weapons. Don't spread upgrade materials too thin in the early game.</p>
+                    </div>
+
+                    <h3>Spirit Ash Strategy</h3>
+                    <ul>
+                        <li><strong>Skeleton Militiaman:</strong> First spirit, great for early game</li>
+                        <li><strong>Gelmir's Paw:</strong> Found in Stormhill Peninsula - excellent tank spirit</li>
+                        <li><strong>Spirit Calling Bell:</strong> Required to use spirits - find this early in Stormveil</li>
+                        <li><strong>FP Cost:</strong> Spirits cost FP to summon - manage your resources</li>
+                    </ul>
+                </div>
+
+                <!-- First Boss Guide -->
+                <div class="content-section">
+                    <h2 id="section7">7. First Boss Guide</h2>
+
+                    <p>Your first major boss encounter sets the tone for your Elden Ring journey. Here's how to approach the early bosses:</p>
+
+                    <h3>Grafted Scion (Optional Tutorial Boss)</h3>
+                    <p><strong>Location:</strong> Inside Limgrave church</p>
+                    <p><strong>Difficulty:</strong> Very Easy</p>
+
+                    <h4>Strategy:</h4>
+                    <ul>
+                        <li><strong>Learn the Basics:</strong> This boss teaches you basic combat timing</li>
+                        <li><strong>Use Healing:</strong> Get comfortable using your Crimson Flask mid-fight</li>
+                        <li><strong>No Rush:</strong> Take your time - there's no penalty for slow wins</li>
+                    </ul>
+
+                    <div class="screenshot">
+                        📸 Grafted Scion boss battle screenshot
+                    </div>
+
+                    <h3>Godrick the Grafted (First Main Boss)</h3>
+                    <p><strong>Location:</strong> Stormveil Castle</p>
+                    <p><strong>Difficulty:</strong> Medium - Moderate for first-time players</p>
+                    <p><strong>Recommended Level:</strong> 15-25</p>
+
+                    <h4>Phase 1 Strategy:</h4>
+                    <ul>
+                        <li><strong>Stay Under Him:</strong> Many attacks go over your head when close</li>
+                        <li><strong>Watch for Red Dagger:</strong> Dodge roll when he raises red light dagger</li>
+                        <li><strong>Exploit Recovery:</strong> Attack him while he's recovering from big swings</li>
+                    </ul>
+
+                    <h4>Phase 2 Strategy (Transformation):</h4>
+                    <ul>
+                        <li><strong>Keep Distance:</strong> His transformed form has deadly close-range attacks</li>
+                        <li><strong>Dodge Rolling Attack:</strong> His signature rolling attack has long wind-up - easy to dodge</li>
+                        <li><strong>Avoid Fire:</strong> His area attacks cover large ground - create distance</li>
+                    </ul>
+
+                    <div class="pro-tip">
+                        <div class="pro-tip-title">⚠️ Godrick Tips</div>
+                        <p>Use Spirit Ashes! Summoning a tank like Gelmir's Paw can completely change this fight. Also, Margit's Fell Omen can help you skip Godrick entirely if you find him too difficult.</p>
+                    </div>
+
+                    <h3>Margit, the Fell Omen (Optional Early Boss)</h3>
+                    <p><strong>Location:</strong> Weeping Peninsula, far south of Limgrave</p>
+                    <p><strong>Difficulty:</strong> Hard - Challenging but doable early</p>
+                    <p><strong>Recommended Level:</strong> 20-30</p>
+
+                    <h4>Strategy:</h4>
+                    <ul>
+                        <li><strong>Dodge Red Mist:</strong> His blood mist attacks have long range - roll away early</a></li>
+                        <li><strong>Attack During Recovery:</strong> Heavy attacks leave him vulnerable for follow-ups</li>
+                        <li><strong>Watch Water Phase:</strong> He becomes more aggressive when standing in blood lake</li>
+                        <li><strong>Poise Break is Key:</strong> Breaking his stance opens critical opportunities</li>
+                    </ul>
+                </div>
+
+                <!-- Essential Items -->
+                <div class="content-section">
+                    <h2 id="section8">8. Essential Items</h2>
+
+                    <p>Certain items can dramatically improve your early game experience. Prioritize finding these:</p>
+
+                    <h3>Key Locations and Items</h3>
+                    <ul>
+                        <li><strong>Torrent:</strong> Essential mount. Found by completing first dungeon in Limgrave</li>
+                        <li><strong>Spirit Calling Bell:</strong> Required to summon allies. Found in Stormveil Castle</li>
+                        <li><strong>Larval Tear:</strong> Allows stat respec. Found by defeating Rennala (optional early boss)</li>
+                        <li><strong>Imbuing Key:</strong> Infuse weapons with magical affinities. Found in Stormveil</li>
+                        <li><strong>Crystal Tear:</strong> Essential weapon tear for smithing. Found in Stormveil</li>
+                    </ul>
+
+                    <h3>Must-Have Sorcery</h3>
+                    <p>If playing a magic build, prioritize acquiring:</p>
+                    <ul>
+                        <li><strong>Glintstone Pebble:</strong> Basic projectile sorcery. Learned in Liurnia</li>
+                        <li><strong>Glintstone Dart:</strong> Faster casting projectile. Learned in Liurnia</li>
+                        <li><strong>Swift Glintstone Shard:</strong> Rapid-fire sorcery. Learned in Liurnia</li>
+                        <li><strong>Azular's Glintblade:</strong> Melee-range sorcery. Learned from Preceptor Seluvis</li>
+                    </ul>
+
+                    <div class="screenshot">
+                        📸 Liurnia of the Lakes screenshot
+                    </div>
+
+                    <h3>Important Armor and Rings</h3>
+                    <ul>
+                        <li><strong>Godrick Soldier Armor:</strong> Excellent early defense, found in Stormveil</li>
+                        <li><strong>Bull-Goat Talisman:</strong> Boosts physical damage. Found in Stormveil</li>
+                        <li><strong>Radagon's Soreseal:</strong> Boosts sorcery power. Found in Liurnia</li>
+                        <li><strong>Viridian Amber Medallion:</strong> Increases flask charges. Found in Limgrave</li>
+                    </ul>
+
+                    <div class="pro-tip">
+                        <div class="pro-tip-title">🔍 Exploration Tip</div>
+                        <p>Don't rush through areas! Elden Ring rewards thorough exploration. Check every corner, fight every optional enemy, and follow every path. Many essential items are off the main path.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ -->
+                <div class="content-section">
+                    <h2 id="section9">9. FAQ</h2>
+
+                    <p>Common questions from new Elden Ring players:</p>
+
+                    <h4>Q: How many hours does it take to beat Elden Ring?</h4>
+                    <p>A: The main story takes approximately 50-80 hours for most players. Completionists can expect 150+ hours to find everything, complete all side quests, and defeat all bosses.</p>
+
+                    <h4>Q: Is Elden Ring harder than other Souls games?</h4>
+                    <p>A: Elden Ring is designed to be more accessible than previous FromSoftware titles. The open world allows you to tackle challenges in your preferred order, and Spirit Ashes provide significant help during difficult encounters.</p>
+
+                    <h4>Q: What happens when I die?</h4>
+                    <p>A: You respawn at the last Site of Grace you rested at. You lose your runes (currency) unless you return to the place of death within a set time period to recover them.</p>
+
+                    <h4>Q: Can I play offline?</h4>
+                    <p>A: Yes! Elden Ring can be played entirely offline. You'll still see spirits, messages, and bloodstains from your own deaths, but you won't see other players or be able to summon help.</p>
+
+                    <h4>Q: Should I play with a mouse and keyboard or controller?</h4>
+                    <p>A: Both work well, but most players prefer gamepads for FromSoftware games. The analog stick input for movement and camera control feels more natural. However, the PC mouse and keyboard support has been improved significantly.</p>
+
+                    <h4>Q: Is there a difficulty setting?</h4>
+                    <p>A: No traditional difficulty settings. However, you can adjust challenge through Spirit Ash summons, multiplayer cooperation, and building your character appropriately for your playstyle.</p>
+
+                    <h4>Q: Can I respec my character?</h4>
+                    <p>A: Yes! After defeating Rennala, Queen of the Moon, you can use a Larval Tear at a Site of Grace to redistribute your stats. This costs 1 Larval Tear per respec.</p>
+                </div>
+
+                <!-- Related Guides -->
+                <div class="related-guides">
+                    <h2 class="related-title">📖 Related Guides</h2>
+                    <div class="related-grid">
+                        <div class="related-card">
+                            <h3>Elden Ring Best Starting Weapons</h3>
+                            <p>Discover the most powerful early-game weapons and where to find them</p>
+                        </div>
+                        <div class="related-card">
+                            <h3>Stormveil Castle Complete Walkthrough</h3>
+                            <p>Full guide through Godrick's domain with all secret locations</p>
+                        </div>
+                        <div class="related-card">
+                            <h3>Best Spirit Ashes for Every Situation</h3>
+                            <p>Rank and strategy guide for all summonable allies</p>
+                        </div>
+                        <div class="related-card">
+                            <h3>Elden Ring Character Build Guide</h3>
+                            <p>Optimal builds for Strength, Dexterity, Intelligence, and Faith</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- AdSense Sidebar Ad -->
+                <div class="sidebar-widget">
+                    <div class="widget-title">📱 AdSense Sidebar</div>
+                    <div class="ad-placeholder" style="margin: 0; min-height: 250px;">
+                        Place sidebar ad here
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="sidebar-widget">
+                    <div class="widget-title">🔗 Quick Links</div>
+                    <div class="widget-content">
+                        <ul>
+                            <li><a href="#section1">Getting Started</a></li>
+                            <li><a href="#section2">Character Creation</a></li>
+                            <li><a href="#section3">Essential Controls</a></li>
+                            <li><a href="#section4">Starting Areas</a></li>
+                            <li><a href="#section5">Combat Fundamentals</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Game Info -->
+                <div class="sidebar-widget">
+                    <div class="widget-title">🎮 Game Info</div>
+                    <div class="widget-content">
+                        <p><strong>Developer:</strong> FromSoftware</p>
+                        <p><strong>Publisher:</strong> Bandai Namco</p>
+                        <p><strong>Release Date:</strong> February 25, 2022</p>
+                        <p><strong>Platforms:</strong> PS5, Xbox Series X/S, PC</p>
+                        <p><strong>Genre:</strong> Action RPG</p>
+                        <p><strong>MSRP:</strong> $59.99</p>
+                    </div>
+                </div>
+
+                <!-- Popular Guides -->
+                <div class="sidebar-widget">
+                    <div class="widget-title">🔥 Popular Guides</div>
+                    <div class="widget-content">
+                        <ul>
+                            <li><a href="elden-ring-boss-guide.html">Elden Ring Boss Strategies</a></li>
+                            <li><a href="elden-ring-dlc-guide.html">Shadow of the Erdtree DLC Guide</a></li>
+                            <li><a href="genshin-impact-builds.html">Genshin Impact Character Builds</a></li>
+                            <li><a href="minecraft-survival.html">Minecraft Survival Guide 2024</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Game Guides Hub. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="../index.html">Home</a>
+            <a href="../pages/guides.html">Game Guides</a>
+            <a href="../pages/about.html">About</a>
+            <a href="../pages/contact.html">Contact</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling to anchor
+        document.querySelectorAll('.toc-list a, .widget-content a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    const navHeight = 80;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    history.pushState(null, null, targetId);
+                }
+            });
+        });
+
+        // Highlight current visible section in TOC
+        const sections = document.querySelectorAll('.content-section h2[id]');
+        const tocLinks = document.querySelectorAll('.toc-list a');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-100px 0px -50% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    tocLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+
+        // Handle hash on page load
+        if (window.location.hash) {
+            setTimeout(() => {
+                const targetElement = document.querySelector(window.location.hash);
+                if (targetElement) {
+                    const navHeight = 80;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 100);
+        }
+    </script>
+</body>
+</html>

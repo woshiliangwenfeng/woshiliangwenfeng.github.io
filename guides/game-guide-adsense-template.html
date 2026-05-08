@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-35CP87Q5L4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-35CP87Q5L4');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="[Game Name] complete walkthrough and guide. Find tips, strategies, boss battles, collectibles, and secrets for [Game Name].">
+    <meta name="keywords" content="[Game Name], walkthrough, guide, tips, strategies, [Genre], gaming">
+    <title>[Game Name] Complete Walkthrough | Game Guides Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #0a0e27;
+            color: #e8e8e8;
+            line-height: 1.6;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+            z-index: 1000;
+        }
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .logo-icon {
+            font-size: 1.8rem;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        .nav-links a {
+            color: #a0aec0;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem 0;
+        }
+        .nav-links a:hover {
+            color: #fff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px 40px;
+        }
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+        }
+        .main-content {
+            min-width: 0;
+        }
+        .game-header {
+            background: linear-gradient(135deg, rgba(30, 35, 60, 0.8) 0%, rgba(20, 25, 45, 0.8) 100%);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .game-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .game-meta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+        .rating {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: rgba(102, 126, 234, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            color: #667eea;
+            font-weight: 600;
+        }
+        .game-description {
+            color: #a0aec0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .ad-unit {
+            margin: 2rem auto;
+            text-align: center;
+            min-height: 90px;
+            background: rgba(30, 35, 60, 0.4);
+            border: 1px dashed rgba(102, 126, 234, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        .ad-unit span {
+            display: block;
+            font-size: 0.8rem;
+            color: #718096;
+            margin-top: 0.5rem;
+        }
+        .toc {
+            background: rgba(20, 25, 45, 0.6);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            position: static;
+        }
+        .toc-title {
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .toc-list li {
+            margin-bottom: 0.5rem;
+        }
+        .toc-list a {
+            color: #a0aec0;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            display: block;
+            padding: 0.3rem 0;
+        }
+        .toc-list a:hover {
+            color: #667eea;
+            padding-left: 0.5rem;
+        }
+        .toc-list a.active {
+            color: #667eea;
+            font-weight: 600;
+        }
+        .content-section {
+            background: rgba(30, 35, 60, 0.4);
+            border: 1px solid rgba(102, 126, 234, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .content-section h2 {
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            scroll-margin-top: 100px;
+        }
+        .content-section h3 {
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.8rem;
+        }
+        .content-section h4 {
+            color: #a0aec0;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1rem 0 0.6rem;
+        }
+        .content-section p {
+            color: #a0aec0;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        .content-section ul,
+        .content-section ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+            color: #a0aec0;
+        }
+        .content-section li {
+            margin: 0.5rem 0;
+            line-height: 1.7;
+        }
+        .content-section strong {
+            color: #fff;
+        }
+        .content-section em {
+            color: #e8e8e8;
+        }
+        .content-section code {
+            background: rgba(102, 126, 234, 0.2);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: #667eea;
+        }
+        .screenshot {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 8px;
+            margin: 1.5rem auto;
+            display: block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.2rem;
+        }
+        .pro-tip {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        .pro-tip-title {
+            color: #667eea;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .sidebar {
+            min-width: 0;
+        }
+        .sidebar-widget {
+            background: rgba(30, 35, 60, 0.6);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .widget-title {
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .widget-content {
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+        .widget-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .widget-content li {
+            margin-bottom: 0.8rem;
+        }
+        .widget-content a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .widget-content a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+        .related-guides {
+            margin-top: 3rem;
+        }
+        .related-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .related-card {
+            background: rgba(30, 35, 60, 0.6);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+        .related-card:hover {
+            background: rgba(30, 35, 60, 0.8);
+            border-color: rgba(102, 126, 234, 0.4);
+            transform: translateY(-3px);
+        }
+        .related-card h3 {
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .related-card p {
+            color: #a0aec0;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        footer {
+            background: rgba(5, 8, 20, 0.8);
+            border-top: 1px solid rgba(102, 126, 234, 0.2);
+            padding: 2rem;
+            text-align: center;
+            color: #718096;
+            font-size: 0.9rem;
+            margin-top: 3rem;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .footer-links a {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: #667eea;
+        }
+        @media (max-width: 1024px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .toc {
+                position: static;
+                margin-bottom: 2rem;
+            }
+            .sidebar {
+                display: none;
+            }
+        }
+        @media (max-width: 768px) {
+            .game-title {
+                font-size: 1.8rem;
+            }
+            .nav-inner {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .container {
+                padding-top: 180px;
+            }
+            .content-section {
+                padding: 1.5rem;
+            }
+            .game-header {
+                padding: 1.5rem;
+            }
+            .ad-unit.top-banner,
+            .ad-unit.bottom-banner {
+                display: none;
+            }
+            .ad-unit.ins {
+                margin: 1.5rem 0;
+                padding: 1rem;
+            }
+        }
+        @media (min-width: 769px) and (max-width: 1023px) {
+            .sidebar .ad-unit {
+                display: none;
+            }
+        }
+    </style>
+    <!-- AdSense Script - Replace YOUR-ADSENSE-ID with your actual AdSense ID -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR-ADSENSE-ID"
+         crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">🎮</span>
+                GameGuidesHub
+            </a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../pages/guides.html">Game Guides</a>
+                <a href="../pages/tools.html">Tools</a>
+                <a href="../pages/about.html">About</a>
+                <a href="../pages/contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="main-content">
+                <div class="game-header">
+                    <h1 class="game-title">[Game Name] Complete Walkthrough Guide</h1>
+
+                    <div class="game-meta">
+                        <div class="rating">⭐ 4.9/5</div>
+                        <div class="meta-item">📅 Published: [Date]</div>
+                        <div class="meta-item">🎮 Platforms: [Platform1], [Platform2]</div>
+                        <div class="meta-item">⏱️ Reading time: [X] mins</div>
+                    </div>
+
+                    <p class="game-description">
+                        Comprehensive guide for [Game Name]. This walkthrough covers everything from beginner tips to advanced strategies, boss battles, collectibles, and hidden secrets.
+                    </p>
+                </div>
+
+                <!-- AdSense Top Banner (728x90) - Hidden on mobile -->
+                <div class="ad-unit top-banner">
+                    <!-- Replace with actual ad code -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="YOUR-ADSENSE-ID"
+                         data-ad-slot="YOUR-AD-SLOT-ID"
+                         data-ad-format="horizontal"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+
+                <!-- Table of Contents -->
+                <div class="toc">
+                    <div class="toc-title">📋 Table of Contents</div>
+                    <ul class="toc-list">
+                        <li><a href="#section1">1. Getting Started</a></li>
+                        <li><a href="#section2">2. Main Walkthrough</a></li>
+                        <li><a href="#section3">3. Boss Strategies</a></li>
+                        <li><a href="#section4">4. Collectibles & Secrets</a></li>
+                        <li><a href="#section5">5. Advanced Tips</a></li>
+                        <li><a href="#section6">6. FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Main Content Sections -->
+                <div class="content-section">
+                    <h2 id="section1">1. Getting Started</h2>
+
+                    <h3>Beginner's Guide</h3>
+                    <p>Welcome to [Game Name]! This section will help you get started with the basics of the game and set you on the right path.</p>
+
+                    <div class="pro-tip">
+                        <div class="pro-tip-title">💡 Pro Tip</div>
+                        <p>Start by completing the tutorial area thoroughly. This will give you a strong foundation and early access to important items and abilities.</p>
+                    </div>
+
+                    <h4>Essential Controls</h4>
+                    <ul>
+                        <li><strong>Movement:</strong> WASD or analog stick</li>
+                        <li><strong>Combat:</strong> Left click/RT button</li>
+                        <li><strong>Interact:</strong> E/X button</li>
+                        <li><strong>Inventory:</strong> I/Start button</li>
+                    </ul>
+
+                    <h4>Character Creation Tips</h4>
+                    <p>When creating your character, consider these recommendations for your first playthrough:</p>
+                    <ol>
+                        <li>Choose a balanced class for versatility</li>
+                        <li>Focus on attributes that match your playstyle</li>
+                        <li>Don't min-max on your first run</li>
+                        <li>Experiment with different builds early on</li>
+                    </ol>
+
+                    <!-- Screenshot placeholder -->
+                    <div class="screenshot">
+                        📸 Screenshot placeholder (800x450)
+                    </div>
+                </div>
+
+                <!-- AdSense In-Article Unit (300x250) -->
+                <div class="ad-unit ins">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="YOUR-ADSENSE-ID"
+                         data-ad-slot="YOUR-AD-SLOT-ID"
+                         data-ad-format="rectangle"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+
+                <div class="content-section">
+                    <h2 id="section2">2. Main Walkthrough</h2>
+
+                    <p>This section provides a step-by-step guide through the main storyline of [Game Name]. Follow these instructions to progress through the game efficiently.</p>
+
+                    <h3>Chapter 1: The Beginning</h3>
+                    <p>The game starts in [Location Name]. Here's what you need to do:</p>
+                    <ol>
+                        <li>Speak to the NPC and accept the quest</li>
+                        <li>Head towards the marked location on your map</li>
+                        <li>Defeat the initial enemies using basic attacks</li>
+                        <li>Collect the [Item Name] from the chest</li>
+                        <li>Return to the NPC to complete the quest</li>
+                    </ol>
+
+                    <h3>Chapter 2: First Major Challenge</h3>
+                    <p>As you progress, you'll encounter [Boss Name]. This boss requires specific strategies to defeat effectively.</p>
+
+                    <div class="pro-tip">
+                        <div class="pro-tip-title">⚠️ Warning</div>
+                        <p>Save your game before attempting this boss battle. It's significantly more challenging than previous encounters.</p>
+                    </div>
+
+                    <h3>Chapter 3: Mid-Game Progression</h3>
+                    <p>By this point, you should have unlocked [Mechanic Name]. This opens up new possibilities for exploration and combat.</p>
+
+                    <ul>
+                        <li>Use your new ability to access previously unreachable areas</li>
+                        <li>Return to earlier locations to find hidden secrets</li>
+                        <li>Upgrade your equipment with materials collected so far</li>
+                        <li>Consider respecing your character if your build isn't working</li>
+                    </ul>
+                </div>
+
+                <!-- AdSense In-Article Unit (300x250) -->
+                <div class="ad-unit ins">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="YOUR-ADSENSE-ID"
+                         data-ad-slot="YOUR-AD-SLOT-ID"
+                         data-ad-format="rectangle"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+
+                <div class="content-section">
+                    <h2 id="section3">3. Boss Strategies</h2>
+
+                    <p>Here are detailed strategies for all major bosses in [Game Name]. Each boss has unique mechanics that require specific approaches.</p>
+
+                    <h3>Boss 1: [Boss Name]</h3>
+                    <p><strong>Location:</strong> [Area Name]</p>
+                    <p><strong>Recommended Level:</strong> [X]</p>
+                    <p><strong>Weakness:</strong> [Element/Type]</p>
+
+                    <h4>Strategy</h4>
+                    <ol>
+                        <li>Start the battle by maintaining distance and observing attack patterns</li>
+                        <li>When the boss performs [Attack Name], dodge to the [direction]</li>
+                        <li>Use [Element] damage during vulnerable phase</li>
+                        <li>Avoid staying in front of the boss during [Attack Name]</li>
+                        <li>Save your special abilities for the second phase</li>
+                    </ol>
+
+                    <div class="screenshot">
+                        📸 Boss battle screenshot
+                    </div>
+
+                    <h3>Boss 2: [Boss Name]</h3>
+                    <p><strong>Location:</strong> [Area Name]</p>
+                    <p><strong>Recommended Level:</strong> [X]</p>
+                    <p><strong>Weakness:</strong> [Element/Type]</p>
+
+                    <h4>Strategy</h4>
+                    <p>This boss has multiple phases. Adapt your strategy accordingly:</p>
+                    <ul>
+                        <li><strong>Phase 1:</strong> Focus on dodging and opportunistic attacks</li>
+                        <li><strong>Phase 2:</strong> The boss gains [New Ability]. Watch for telegraphs</li>
+                        <li><strong>Phase 3:</strong> Enrage mode. Use all resources available</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2 id="section4">4. Collectibles & Secrets</h2>
+
+                    <p>[Game Name] contains numerous collectibles and hidden secrets. This section helps you find them all.</p>
+
+                    <h3>Hidden Weapons</h3>
+                    <ul>
+                        <li><strong>[Weapon Name]:</strong> Found in [Location]. Requires [Quest] to access.</li>
+                        <li><strong>[Weapon Name]:</strong> Hidden behind [Puzzle Solution].</li>
+                        <li><strong>[Weapon Name]:</strong> Reward for completing [Achievement].</li>
+                    </ul>
+
+                    <h3>Secret Areas</h3>
+                    <p>There are [Number] secret areas in [Game Name]. Here are the locations of the most important ones:</p>
+
+                    <ol>
+                        <li><strong>[Area Name]:</strong> Enter through [Entrance Method]. Contains [Reward].</li>
+                        <li><strong>[Area Name]:</strong> Look for [Clue]. Hidden behind [Obstacle].</li>
+                        <li><strong>[Area Name]:</strong> Only accessible after [Condition].</li>
+                    </ol>
+
+                    <div class="pro-tip">
+                        <div class="pro-tip-title">🔍 Exploration Tip</div>
+                        <p>Use your [Ability Name] to reveal hidden paths. Many secret areas are only visible when this ability is active.</p>
+                    </div>
+
+                    <h3>Achievement Guide</h3>
+                    <p>Complete these specific actions to unlock all achievements:</p>
+                    <ul>
+                        <li><strong>[Achievement Name]:</strong> [Description] - [How to unlock]</li>
+                        <li><strong>[Achievement Name]:</strong> [Description] - [How to unlock]</li>
+                        <li><strong>[Achievement Name]:</strong> [Description] - [How to unlock]</li>
+                    </ul>
+                </div>
+
+                <!-- AdSense In-Article Unit (300x250) -->
+                <div class="ad-unit ins">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="YOUR-ADSENSE-ID"
+                         data-ad-slot="YOUR-AD-SLOT-ID"
+                         data-ad-format="rectangle"
+                         data-full-width-responsive="true"></ins>
+                    </script>
+                </div>
+
+                <div class="content-section">
+                    <h2 id="section5">5. Advanced Tips</h2>
+
+                    <p>Take your gameplay to the next level with these advanced strategies and techniques.</p>
+
+                    <h3>Combat Mastery</h3>
+                    <ul>
+                        <li><strong>Perfect Timing:</strong> Master the timing window for [Mechanic]. This provides additional damage and invincibility frames.</li>
+                        <li><strong>Combo Chains:</strong> Learn optimal attack combinations for maximum DPS.</li>
+                        <li><strong>Resource Management:</strong> Balance offensive and defensive resource usage.</li>
+                    </ul>
+
+                    <h3>Character Builds</h3>
+                    <p>Recommended builds for different playstyles:</p>
+
+                    <h4>DPS Build</h4>
+                    <ul>
+                        <li>Focus on [Attribute] and [Attribute]</li>
+                        <li>Use [Weapon Type] for maximum damage output</li>
+                        <li>Prioritize critical hit chance and damage</li>
+                    </ul>
+
+                    <h4>Tank Build</h4>
+                    <ul>
+                        <li>Maximize [Attribute] and [Attribute]</li>
+                        <li>Equip [Armor Type] for damage reduction</li>
+                        <li>Use [Skill Name] to draw enemy attention</li>
+                    </ul>
+
+                    <h3>Speedrun Techniques</h3>
+                    <p>Advanced players can use these techniques to complete the game faster: Skip cutscenes with [Button]. Use [Glitch] to bypass [Area]. Optimize pathing with [Strategy].</p>
+                </div>
+
+                <div class="content-section">
+                    <h2 id="section6">6. FAQ</h2>
+
+                    <p>Common questions and answers about [Game Name]:</p>
+
+                    <h4>Q: How do I unlock [Feature]?</h4>
+                    <p>A: [Feature] becomes available after completing [Quest]. You must also have reached [Level] to access it.</p>
+
+                    <h4>Q: What's the best class for beginners?</h4>
+                    <p>A: The [Class Name] is recommended for new players. It provides a balanced experience with clear progression paths.</p>
+
+                    <h4>Q: How long does it take to complete the game?</h4>
+                    <p>A: Main story takes approximately [X] hours. Completionists can expect [Y]+ hours to find everything.</p>
+
+                    <h4>Q: Can I play [Game Name] offline?</h4>
+                    <p>A: Yes, [Game Name] can be played entirely offline. However, some features require an internet connection.</p>
+
+                    <h4>Q: Are there any missable items?</h4>
+                    <p>A: Yes, several items can be missed. Refer to the Collectibles section to ensure you find everything on your first playthrough.</p>
+                </div>
+
+                <!-- Related Guides -->
+                <div class="related-guides">
+                    <h2 class="related-title">📖 Related Guides</h2>
+                    <div class="related-grid">
+                        <div class="related-card">
+                            <h3>Best [Game Name] Builds</h3>
+                            <p>Optimize your character with these powerful build configurations</p>
+                        </div>
+                        <div class="related-card">
+                            <h3>[Game Name] DLC Walkthrough</h3>
+                            <p>Complete guide for the latest expansion content</p>
+                        </div>
+                        <div class="related-card">
+                            <h3>Hidden Secrets Guide</h3>
+                            <p>Discover all the well-hidden secrets and easter eggs</p>
+                        </div>
+                        <div class="related-card">
+                            <h3>Troubleshooting Common Issues</h3>
+                            <p>Solutions to frequently encountered problems and bugs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- AdSense Sidebar Ad (160x600) - Desktop only -->
+                <div class="sidebar-widget">
+                    <div class="widget-title">📱 AdSense Sidebar</div>
+                    <div class="ad-unit">
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="YOUR-ADSENSE-ID"
+                             data-ad-slot="YOUR-AD-SLOT-ID"
+                             data-ad-format="vertical"
+                             data-full-width-responsive="true"></ins>
+                        <script>
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="sidebar-widget">
+                    <div class="widget-title">🔗 Quick Links</div>
+                    <div class="widget-content">
+                        <ul>
+                            <li><a href="#section1">Getting Started</a></li>
+                            <li><a href="#section2">Main Walkthrough</a></li>
+                            <li><a href="#section3">Boss Strategies</a></li>
+                            <li><a href="#section4">Collectibles</a></li>
+                            <li><a href="#section5">Advanced Tips</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Game Info -->
+                <div class="sidebar-widget">
+                    <div class="widget-title">🎮 Game Info</div>
+                    <div class="widget-content">
+                        <p><strong>Developer:</strong> [Developer Name]</p>
+                        <p><strong>Release Date:</strong> [Date]</p>
+                        <p><strong>Platforms:</strong> [Platforms]</p>
+                        <p><strong>Genre:</strong> [Genre]</p>
+                        <p><strong>MSRP:</strong> $[Price]</p>
+                    </div>
+                </div>
+
+                <!-- Popular Guides -->
+                <div class="sidebar-widget">
+                    <div class="widget-title">🔥 Popular Guides</div>
+                    <div class="widget-content">
+                        <ul>
+                            <li><a href="#">Elden Ring Complete Walkthrough</a></li>
+                            <li><a href="#">Genshin Impact Character Builds</a></li>
+                            <li><a href="#">Minecraft Survival Guide 2024</a></li>
+                            <li><a href="#">Top 10 Gaming Tools</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- AdSense Bottom Banner (728x90) -->
+        <div class="ad-unit bottom-banner">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="YOUR-ADSENSE-ID"
+                 data-ad-slot="YOUR-AD-SLOT-ID"
+                 data-ad-format="horizontal"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <footer>
+        <p>©2026 Game Guides Hub. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="../index.html">Home</a>
+            <a href="../pages/guides.html">Game Guides</a>
+            <a href="../pages/about.html">About</a>
+            <a href="../pages/contact.html">Contact</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling to anchor
+        document.querySelectorAll('.toc-list a, .widget-content a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    const navHeight = 80;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    history.pushState(null, null, targetId);
+                }
+            });
+        });
+
+        // Highlight current visible section in TOC
+        const sections = document.querySelectorAll('.content-section h2[id]');
+        const tocLinks = document.querySelectorAll('.toc-list a');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-100px 0px -50% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    tocLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+
+        // Handle hash on page load
+        if (window.location.hash) {
+            setTimeout(() => {
+                const targetElement = document.querySelector(window.location.hash);
+                if (targetElement) {
+                    const navHeight = 80;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 100);
+        }
+    </script>
+</body>
+</html>
