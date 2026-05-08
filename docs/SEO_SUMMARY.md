@@ -2,7 +2,7 @@
 
 ## 🎯 SEO优化概览
 
-本文档总结了为 Game Guides Hub 网站（在绑定域名中，过几天附上链接）完成的全面 SEO 优化工作。
+本文档总结了为 Game Guides Hub 网站（https://woshiliangwenfeng.github.io）完成的全面 SEO 优化工作。
 
 ---
 
