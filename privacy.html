@@ -1,175 +1,426 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>隐私政策</title>
+    <meta name="description" content="Privacy Policy for Game Guides Hub - Learn how we collect, use, and protect your data.">
+    <title>Privacy Policy - Game Guides Hub</title>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         body {
-            font-family: "Microsoft Yahei", sans-serif;
-            background: #f5f7fa;
-            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #0a0e27;
+            color: #e8e8e8;
             line-height: 1.6;
         }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+            z-index: 1000;
+        }
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .logo-icon {
+            font-size: 1.8rem;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        .nav-links a {
+            color: #a0aec0;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem 0;
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #fff;
+        }
+        .nav-links a.active {
+            border-bottom: 2px solid #667eea;
+        }
         .container {
-            max-width: 800px;
-            margin: 60px auto;
-            padding: 0 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 100px 20px 40px;
+        }
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
         }
         h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
-            color: #222;
-            text-align: center;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .last-updated {
+            color: #a0aec0;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+        .content {
+            background: rgba(30, 35, 60, 0.6);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            padding: 3rem;
+            border-radius: 16px;
         }
         h2 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            margin-top: 30px;
-            color: #333;
+            font-size: 1.5rem;
+            color: #fff;
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(102, 126, 234, 0.2);
+            scroll-margin-top: 100px;
+        }
+        h2:first-of-type {
+            margin-top: 0;
         }
         p {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 15px;
+            color: #a0aec0;
+            margin-bottom: 1rem;
             line-height: 1.8;
         }
-        .section {
-            margin: 30px 0;
-            padding: 30px;
-            background: #fff;
+        ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+            color: #a0aec0;
+        }
+        li {
+            margin: 0.5rem 0;
+            line-height: 1.7;
+        }
+        .highlight {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            color: #fff;
+            padding: 1.5rem;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin: 1.5rem 0;
         }
-        .nav {
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #ddd;
-            text-align: center;
+        .highlight strong {
+            color: #fff;
         }
-        .nav a {
-            color: #007bff;
+        .highlight ul {
+            color: rgba(232, 232, 232, 0.9);
+            padding-left: 1.5rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 1rem;
         }
-        .nav a:hover {
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+        }
+        .toc {
+            background: rgba(20, 25, 45, 0.6);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        .toc h3 {
+            color: #fff;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .toc ul {
+            margin: 0;
+            padding-left: 1.5rem;
+            color: #a0aec0;
+        }
+        .toc a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .toc a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+        .toc a.active {
+            color: #764ba2;
+            font-weight: 600;
             text-decoration: underline;
         }
         footer {
-            margin-top: 60px;
-            font-size: 14px;
-            color: #999;
+            background: rgba(5, 8, 20, 0.8);
+            border-top: 1px solid rgba(102, 126, 234, 0.2);
+            padding: 2rem;
             text-align: center;
+            color: #718096;
+            font-size: 0.9rem;
+            margin-top: 3rem;
         }
-        ul {
-            margin: 10px 0;
-            padding-left: 30px;
-            color: #666;
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
         }
-        li {
-            margin: 8px 0;
+        .footer-links a {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: color 0.3s;
         }
-        .last-updated {
-            text-align: center;
-            font-size: 14px;
-            color: #999;
-            margin-top: 20px;
+        .footer-links a:hover {
+            color: #667eea;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .nav-inner {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .container {
+                padding-top: 180px;
+            }
+            .content {
+                padding: 1.5rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
         }
     </style>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🎮</span>
+                GameGuidesHub
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="guides.html">Game Guides</a>
+                <a href="tools.html">Tools</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html" class="active">Privacy</a>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
-        <nav class="nav">
-            <a href="index.html">首页</a>
-            <a href="about.html">关于我们</a>
-            <a href="contact.html">联系我们</a>
-            <a href="privacy.html">隐私政策</a>
-        </nav>
-
-        <h1>隐私政策</h1>
-
-        <div class="section">
-            <p><strong>最后更新日期：2026年4月1日</strong></p>
-
-            <h2>1. 引言</h2>
-            <p>欢迎使用我们的网站。本隐私政策旨在说明我们如何收集、使用、披露和保护您的个人信息。使用本网站即表示您同意本隐私政策的条款和条件。</p>
-
-            <h2>2. 我们收集的信息</h2>
-            <p>我们可能收集以下类型的信息：</p>
-            <ul>
-                <li><strong>浏览数据：</strong>包括您的IP地址、浏览器类型、访问时间、访问的页面等</li>
-                <li><strong>设备信息：</strong>包括您的设备型号、操作系统、屏幕分辨率等</li>
-                <li><strong>Cookies：</strong>我们使用cookies来改善用户体验和进行网站分析</li>
-            </ul>
-
-            <h2>3. 信息的使用</h2>
-            <p>我们收集的信息将用于以下目的：</p>
-            <ul>
-                <li>提供和维护本网站的正常运营</li>
-                <li>改进用户体验和网站功能</li>
-                <li>分析和优化网站性能</li>
-                <li>防止欺诈和安全威胁</li>
-            </ul>
-
-            <h2>4. 第三方服务</h2>
-            <p>本网站可能使用第三方服务，包括但不限于：</p>
-            <ul>
-                <li><strong>Google AdSense：</strong>用于展示相关广告，Google可能收集您的浏览数据</li>
-                <li><strong>Google Analytics：</strong>用于网站统计分析</li>
-            </ul>
-            <p>第三方服务商有其独立的隐私政策，我们建议您查看这些政策以了解更多信息。</p>
-
-            <h2>5. 数据安全</h2>
-            <p>我们采取合理的安全措施来保护您的个人信息，包括：</p>
-            <ul>
-                <li>使用加密技术传输数据</li>
-                <li>限制对个人信息的访问权限</li>
-                <li>定期审查安全措施</li>
-            </ul>
-            <p>然而，请注意没有任何互联网传输方法是100%安全的。</p>
-
-            <h2>6. Cookies的使用</h2>
-            <p>本网站使用cookies来：</p>
-            <ul>
-                <li>记住您的偏好设置</li>
-                <li>分析网站流量</li>
-                <li>提供个性化内容</li>
-            </ul>
-            <p>您可以通过浏览器设置管理或禁用cookies，但这可能会影响网站功能。</p>
-
-            <h2>7. 您的权利</h2>
-            <p>根据适用的数据保护法律，您可能拥有以下权利：</p>
-            <ul>
-                <li>访问您个人信息的权利</li>
-                <li>更正不准确信息的权利</li>
-                <li>删除个人信息的权利</li>
-                <li>反对处理您个人信息的权利</li>
-                <li>数据可携带性的权利</li>
-            </ul>
-
-            <h2>8. 第三方链接</h2>
-            <p>本网站可能包含指向第三方网站的链接。我们对这些网站的内容或隐私惯例不承担责任。我们建议您在访问这些网站时查看其隐私政策。</p>
-
-            <h2>9. 儿童隐私</h2>
-            <p>我们的网站不面向13岁以下的儿童。我们不会故意收集13岁以下儿童的个人信息。如果您是父母或监护人，并且认为您的孩子向我们提供了个人信息，请联系我们。</p>
-
-            <h2>10. 政策变更</h2>
-            <p>我们可能会不时更新本隐私政策。重大变更时，我们会通过网站公告或电子邮件通知您。请定期查看本政策以了解最新信息。</p>
-
-            <h2>11. 联系我们</h2>
-            <p>如果您对本隐私政策有任何疑问或担忧，请通过以下方式联系我们：</p>
-            <p><a href="contact.html" style="color: #007bff;">点击访问联系我们页面</a></p>
+        <div class="page-header">
+            <h1>Privacy Policy</h1>
+            <p class="last-updated">Last Updated: April 1, 2026</p>
         </div>
 
-        <footer>
-            © 2026 我的个人网站 版权所有
-        </footer>
+        <div class="content">
+            <div class="toc">
+                <h3>📋 Table of Contents</h3>
+                <ul>
+                    <li><a href="#section1">1. Introduction</a></li>
+                    <li><a href="#section2">2. Information We Collect</a></li>
+                    <li><a href="#section3">3. How We Use Your Information</a></li>
+                    <li><a href="#section4">4. Third-Party Services</a></li>
+                    <li><a href="#section5">5. Data Security</a></li>
+                    <li><a href="#section6">6. Cookies and Web Beacons</a></li>
+                    <li><a href="#section7">7. Your Rights</a></li>
+                    <li><a href="#section8">8. Third-Party Links</a></li>
+                    <li><a href="#section9">9. Children's Privacy</a></li>
+                    <li><a href="#section10">10. Changes to This Policy</a></li>
+                    <li><a href="#section11">11. Contact Us</a></li>
+                </ul>
+            </div>
+
+            <h2 id="section1">1. Introduction</h2>
+            <p>Welcome to Game Guides Hub. This privacy policy is intended to inform you about how we collect, use, disclose, and protect your personal information. By using this website, you agree to the terms and conditions of this privacy policy.</p>
+
+            <h2 id="section2">2. Information We Collect</h2>
+            <p>We may collect the following types of information:</p>
+            <ul>
+                <li><strong>Browsing Data:</strong> Including your IP address, browser type, access time, and pages visited</li>
+                <li><strong>Device Information:</strong> Including your device model, operating system, and screen resolution</li>
+                <li><strong>Cookies:</strong> We use cookies to improve user experience and conduct website analytics</li>
+                <li><strong>Email Information:</strong> If you contact us via email, we may collect your email address</li>
+            </ul>
+
+            <h2 id="section3">3. How We Use Your Information</h2>
+            <p>The information we collect is used for the following purposes:</p>
+            <ul>
+                <li>To provide and maintain the normal operation of this website</li>
+                <li>To improve user experience and website functionality</li>
+                <li>To analyze and optimize website performance</li>
+                <li>To prevent fraud and security threats</li>
+                <li>To respond to user inquiries and requests</li>
+            </ul>
+
+            <h2 id="section4">4. Third-Party Services</h2>
+            <p>This website may use third-party services, including but not limited to:</p>
+            <ul>
+                <li><strong>Google AdSense:</strong> To display relevant advertisements. Google may collect your browsing data.</li>
+                <li><strong>Google Analytics:</strong> For website statistical analysis.</li>
+                <li><strong>Cloudflare:</strong> For website security and performance optimization.</li>
+            </ul>
+            <p>Third-party service providers have their own privacy policies. We recommend you review these policies for more information about their data practices.</p>
+
+            <h2 id="section5">5. Data Security</h2>
+            <p>We take reasonable security measures to protect your personal information, including:</p>
+            <ul>
+                <li>Using encryption technology to transmit data</li>
+                <li>Restricting access to personal information</li>
+                <li>Regularly reviewing security measures</li>
+            </ul>
+            <p>However, please note that no internet transmission method is 100% secure.</p>
+
+            <h2 id="section6">6. Cookies and Web Beacons</h2>
+            <p>This website uses cookies to:</p>
+            <ul>
+                <li>Remember your preferences</li>
+                <li>Analyze website traffic</li>
+                <li>Provide personalized content</li>
+                <li>Display advertisements</li>
+            </ul>
+            <p>You can manage or disable cookies through your browser settings, but this may affect website functionality.</p>
+
+            <h2 id="section7">7. Your Rights</h2>
+            <p>Under applicable data protection laws, you may have the following rights:</p>
+            <ul>
+                <li>The right to access your personal information</li>
+                <li>The right to correct inaccurate information</li>
+                <li>The right to delete personal information</li>
+                <li>The right to object to processing of your personal information</li>
+                <li>The right to data portability</li>
+            </ul>
+            <p>To exercise these rights, please contact us using the information provided below.</p>
+
+            <h2 id="section8">8. Third-Party Links</h2>
+            <p>This website may contain links to third-party websites. We are not responsible for the content or privacy practices of these websites. We recommend you review the privacy policies of any third-party sites you visit.</p>
+
+            <h2 id="section9">9. Children's Privacy</h2>
+            <p>This website is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us.</p>
+
+            <h2 id="section10">10. Changes to This Policy</h2>
+            <p>We may update this privacy policy from time to time. For significant changes, we will notify you through the website announcements or email. Please review this policy regularly to stay informed about our data practices.</p>
+
+            <h2 id="section11">11. Contact Us</h2>
+            <p>If you have any questions or concerns about this privacy policy, please contact us through the following methods:</p>
+            <a href="contact.html" class="btn">Contact Us</a>
+        </div>
     </div>
+
+    <footer>
+        <p>© 2026 Game Guides Hub. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a.          <a href="contact.html">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling to anchor
+        document.querySelectorAll('.toc a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    const navHeight = 80;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    history.pushState(null, null, targetId);
+                }
+            });
+        });
+
+        // Highlight current visible section
+        const sections = document.querySelectorAll('h2[id]');
+        const tocLinks = document.querySelectorAll('.toc a');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-100px 0px -50% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    tocLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+
+        // Handle hash on page load
+        if (window.location.hash) {
+            setTimeout(() => {
+                const targetElement = document.querySelector(window.location.hash);
+                if (targetElement) {
+                    const navHeight = 80;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 100);
+        }
+    </script>
 </body>
 </html>

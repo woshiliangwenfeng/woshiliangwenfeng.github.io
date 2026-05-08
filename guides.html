@@ -3,12 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Game Guides Hub - Your ultimate destination for video game walkthroughs, tips, and strategies. Find guides for Elden Ring, Genshin Impact, Minecraft, and more.">
-    <meta name="keywords" content="game guides, walkthroughs, game tips, Elden Ring, Genshin Impact, Minecraft, gaming tutorials">
-    <title>Game Guides Hub - Ultimate Game Walkthroughs & Tips</title>
-    <!-- AdSense Script - Replace YOUR-ADSENSE-ID with your actual AdSense ID -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR-ADSENSE-ID"
-         crossorigin="anonymous"></script>
+    <meta name="description" content="Browse our comprehensive collection of video game guides, walkthroughs, and strategies. Find guides for RPG, action, mobile, and indie games.">
+    <title>Game Guides - Game Guides Hub</title>
     <style>
         * {
             margin: 0;
@@ -75,36 +71,27 @@
             margin: 0 auto;
             padding: 100px 20px 40px;
         }
-        .hero {
+        .page-header {
             text-align: center;
-            padding: 3remaring-0 3rem;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
-            border-radius: 20px;
             margin-bottom: 3rem;
-            border: 1px solid rgba(102, 126, 234, 0.3);
         }
         h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 800;
             color: #fff;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
+            background-clip:edia;
         }
-        .subtitle {
-            font-size: 1.3rem;
+        .page-header p {
             color: #a0aec0;
-            margin-bottom: 2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            font-size: 1.2rem;
         }
         .search-box {
-            max-width: 500px;
-            margin: 0 auto 2rem;
-;
+            max-width: 600px;
+            margin: 2rem auto 3rem;
             position: relative;
         }
         .search-box input {
@@ -125,45 +112,8 @@
             background: rgba(255, 255, 255, 0.15);
             border-color: #667eea;
         }
-        .ad-unit {
-            margin: 2rem auto;
-            text-align: center;
-            min-height: 90px;
-            background: rgba(30, 35, 60, 0.4);
-            border: 1px dashed rgba(102, 126, 234, 0.3);
-            border-radius: 8px;
-            padding: 1.5rem;
-        }
-        .ad-unit span {
-            display: block;
-            font-size: 0.8rem;
-            color: #718096;
-            margin-top: 0.5rem;
-        }
-        .category-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-            margin-bottom: 3rem;
-        }
-        .tag {
-            padding: 0.6rem 1.2rem;
-            background: rgba(102, 126, 234, 0.2);
-            border: 1px solid rgba(102, 126, 234, 0.3);
-            border-radius: 20px;
-            color: #a0aec0;
-            text-decoration: none;
-            transition: all 0.3s;
-            font-size: 0.9rem;
-        }
-        .tag:hover {
-            background: rgba(102, 126, 234, 0.4);
-            color: #fff;
-            transform: translateY(-2px);
-        }
         .section-title {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: #fff;
             margin: 3rem 0 1.5rem;
@@ -180,11 +130,11 @@
         }
         .games-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 1.5rem;
         }
         .game-card {
-            background: linear-gradient(135deg, rgba(30, 35, 60, 0.8) 0%, rgba(20, 25, 45, 0.8) 100%);
+            background: rgba(30, 35, 60, 0.6);
             border: 1px solid rgba(102, 126, 234, 0.2);
             border-radius: 16px;
             overflow: hidden;
@@ -198,7 +148,7 @@
         }
         .game-image {
             width: 100%;
-            height: 160px;
+            height: 180px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: flex;
             align-items: center;
@@ -209,14 +159,14 @@
             padding: 1.5rem;
         }
         .game-title {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: #fff;
             margin-bottom: 0.5rem;
         }
         .game-description {
             color: #a0aec0;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             margin-bottom: 1rem;
         }
         .game-stats {
@@ -225,63 +175,35 @@
             font-size: 0.85rem;
             color: #667eea;
         }
-        .featured-guides {
+        .guides-list {
             display: grid;
-            gap: 1.5rem;
+            gap: 1rem;
             margin-top: 1.5rem;
         }
-        .guide-card {
-            background: rgba(30, 35, 60, 0.6);
+        .guide-item {
+            background: rgba(30, 35, 60, 0.4);
             border: 1px solid rgba(102, 126, 234, 0.2);
             border-radius: 12px;
-            padding: 1.5rem;
+            padding: 1rem 1.5rem;
             transition: all 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .guide-card:hover {
-            background: rgba(30, 35, 60, 0.8);
+        .guide-item:hover {
+            background: rgba(30, 35, 60, 0.6);
             border-color: rgba(102, 126, 234, 0.4);
         }
         .guide-title {
-            font-size: 1.1rem;
-            font-weight: 600;
             color: #fff;
-            margin-bottom: 0.5rem;
-        }
-        .guide-excerpt {
-            color: #a0aec0;
-            font-size: 0.9rem;
-        }
-        .tools-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-        .tool-card {
-            background: rgba(30, 35, 60, 0.6);
-            border: 1px solid rgba(102, 126, 234, 0.2);
-            border-radius: 12px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: all 0.3s;
-        }
-        .tool-card:hover {
-            background: rgba(30, 35, 60, 0.8);
-            border-color: rgba(102, 126, 234, 0.4);
-            transform: translateY(-3px);
-        }
-        .tool-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        .tool-title {
-            font-size: 1.1rem;
             font-weight: 600;
-            color: #fff;
-            margin-bottom: 0.5rem;
         }
-        .tool-description {
+        .guide-type {
+            padding: 0.3rem 0.8rem;
+            background: rgba(102, 126, 234, 0.3);
+            border-radius: 20px;
+            font-size: 0.8rem;
             color: #a0aec0;
-            font-size: 0.9rem;
         }
         footer {
             background: rgba(5, 8, 20, 0.8);
@@ -308,7 +230,7 @@
         }
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
             .nav-inner {
                 flex-direction: column;
@@ -322,11 +244,12 @@
             .container {
                 padding-top: 180px;
             }
-            .hero {
-                padding: 2rem 1rem;
-            }
             .games-grid {
-                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            .guide-item {
+                flex-direction: column;
+                gap: 0.5rem;
             }
         }
     </style>
@@ -339,8 +262,8 @@
                 GameGuidesHub
             </a>
             <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="guides.html">Game Guides</a>
+                <a href="index.html">Home</a>
+                <a href="guides.html" class="active">Game Guides</a>
                 <a href="tools.html">Tools</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
@@ -349,31 +272,14 @@
     </nav>
 
     <div class="container">
-        <div class="hero">
-            <h1>Level Up Your Gaming Experience</h1>
-            <p class="subtitle">Your ultimate destination for comprehensive game walkthroughs, expert tips, and unbeatable strategies. From indie gems to AAA blockbusters.</p>
+        <div class="page-header">
+            <h1>Game Guides Library</h1>
+            <p>Explore our comprehensive collection of walkthroughs, tips, and strategies</p>
 
             <div class="search-box">
-                <input type="text" placeholder="Search game guides, tips, and walkthroughs...">
-            </div>
-
-            <div class="category-tags">
-                <a href="#" class="tag">RPG</a>
-                <a href="#" class="tag">Action</a>
-                <a href="#" class="tag">Strategy</a>
-                <a href="#" class="tag">Mobile</a>
-                <a href="#" class="tag">Indie</a>
-                <a href="#" class="tag">Open World</a>
-                <a href="#" class="tag">FPS</a>
+                <input type="text" placeholder="Search game guides by name, genre, or platform...">
             </div>
         </div>
-
-        <!-- AdSense Top Banner (728x90) -->
-        <div class="ad-unit top-banner">
-            📱 AdSense Top Banner (728x90)
-            <span>Replace with actual ad code when approved</span>
-        </div>
-
 
         <h2 class="section-title">Featured Games</h2>
         <div class="games-grid">
@@ -381,10 +287,11 @@
                 <div class="game-image">⚔️</div>
                 <div class="game-content">
                     <h3 class="game-title">Elden Ring</h3>
-                    <p class="game-description">Complete walkthrough, boss strategies, and hidden secrets guide</p>
+                    <p class="game-description">Complete walkthrough including DLC, boss strategies, and all hidden secrets</p>
                     <div class="game-stats">
                         <span>⭐ 4.9/5</span>
                         <span>📖 50+ Guides</span>
+                        <span>🎮 PS5/Xbox/PC</span>
                     </div>
                 </div>
             </a>
@@ -393,10 +300,11 @@
                 <div class="game-image">🌸</div>
                 <div class="game-content">
                     <h3 class="game-title">Genshin Impact</h3>
-                    <p class="game-description">Character builds, exploration tips, and daily optimization</p>
+                    <p class="game-description">Character builds, team compositions, exploration guides and optimization tips</p>
                     <div class="game-stats">
                         <span>⭐ 4.8/5</span>
                         <span>📖 80+ Guides</span>
+                        <span>🎮 Mobile/PC/PS</span>
                     </div>
                 </div>
             </div>
@@ -405,10 +313,11 @@
                 <div class="game-image">⛏️</div>
                 <div class="game-content">
                     <h3 class="game-title">Minecraft</h3>
-                    <p class="game-description">Building tutorials, redstone mechanics, and survival tips</p>
+                    <p class="game-description">Building tutorials, redstone mechanics, survival guides and command blocks</p>
                     <div class="game-stats">
                         <span>⭐ 4.9/5</span>
                         <span>📖 100+ Guides</span>
+                        <span>🎮 Multi-platform</span>
                     </div>
                 </div>
             </div>
@@ -417,57 +326,75 @@
                 <div class="game-image">🚀</div>
                 <div class="game-content">
                     <h3 class="game-title">Cyberpunk 2077</h3>
-                    <p class="game-description">Build guides, weapon optimization, and mission walkthroughs</p>
+                    <p class="game-description">Build guides, weapon optimization, mission walkthroughs and secrets</p>
                     <div class="game-stats">
                         <span>⭐ 4.7/5</span>
                         <span>📖 40+ Guides</span>
+                        <span>🎮 PC/Consoles</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🏴‍☠️</div>
+                <div class="game-content">
+                    <h3 class="game-title">Hollow Knight</h3>
+                    <p class="game-description">Boss strategies, area walkthroughs, charm combinations and secrets</p>
+                    <div class="game-stats">
+                        <span>⭐ 4.9/5</span>
+                        <span>📖 35+ Guides</span>
+                        <span>🎮 Multi-platform</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-image">🎯</div>
+                <div class="game-content">
+                    <h3 class="game-title">Valorant</h3>
+                    <p class="game-description">Agent guides, map strategies, weapon tips and ranked improvement</p>
+                    <div class="game-stats">
+                        <span>⭐ 4.7/5</span>
+                        <span>📖 45+ Guides</span>
+                        <span>🎮 PC</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <h2 class="section-title">Latest Game Guides</h2>
-        <div class="featured-guides">
-            <div class="guide-card">
-                <h3 class="guide-title">Elden Ring DLC: Shadow of the Erdtree Complete Walkthrough</h3>
-                <p class="guide-excerpt">Master the new expansion with our comprehensive guide covering all new bosses, areas, and secrets...</p>
+        <h2 class="section-title">Popular Guides This Week</h2>
+        <div class="guides-list">
+            <div class="guide-item">
+                <span class="guide-title">Elden Ring DLC: Shadow of the Erdtree Complete Walkthrough</span>
+                <span class="guide-type">Walkthrough</span>
             </div>
-
-            <div class="guide-card">
-                <h3 class="guide-title">Top 10 Best Genshin Impact Teams for 2024</h3>
-                <p class="guide-excerpt">Discover the most powerful team compositions and reaction strategies for maximum damage output...</p>
+            <div class="guide-item">
+                <span class="guide-title">Top 10 Best Genshin Impact Teams for 2024</span>
+                <span class="guide-type">Strategy</span>
             </div>
-
-            <div class="guide-card">
-                <h3 class="guide-title">Minecraft 1.21 Ultimate Survival Guide</h3>
-                <p class="guide-excerpt">Everything you need to know about the latest update, new features, and survival strategies...</p>
+            <div class="guide-item">
+                <span class="guide-title">Minecraft 1.21 Ultimate Survival Guide</span>
+                <span class="guide-type">Guide</span>
             </div>
-        </div>
-
-        <h2 class="section-title">Essential Gaming Tools</h2>
-        <div class="tools-section">
-            <div class="tool-card">
-                <div class="tool-icon">🖥️</div>
-                <h3 class="tool-title">FPS Boosters</h3>
-                <p class="tool-description">Optimize your gaming performance</p>
+            <div class="guide-item">
+                <span class="guide-title">How to Beat Malenia in Elden Ring</span>
+                <span class="guide-type">Boss Guide</span>
             </div>
-
-            <div class="tool-card">
-                <div class="tool-icon">🎬</div>
-                <h3 class="tool-title">Recording Software</h3>
-                <p class="tool-description">Capture your best moments</p>
+            <div class="guide-item">
+                <span class="guide-title">Best Weapons in Cyberpunk 2077 2.0</span>
+                <span class="guide-type">Build Guide</span>
             </div>
-
-            <div class="tool-card">
-                <div class="tool-icon">🎤</div>
-                <h3 class="tool-title">Voice Chat Apps</h3>
-                <p class="tool-description">Connect with your team</p>
+            <div class="guide-item">
+                <span class="guide-title">Valorant Agent Tier List 2024</span>
+                <span class="guide-type">Tier List</span>
             </div>
-
-            <div class="tool-card">
-                <div class="tool-icon">⚙️</div>
-                <h3 class="tool-title">Mod Managers</h3>
-                <p class="tool-description">Enhance your gameplay</p>
+            <div class="guide-item">
+                <span class="guide-title">All Hollow Knight Bosses Ranked by Difficulty</span>
+                <span class="guide-type">Ranking</span>
+            </div>
+            <div class="guide-item">
+                <span class="guide-title">Genshin Impact 4.0 Character Builds</span>
+                <span class="guide-type">Build Guide</span>
             </div>
         </div>
     </div>
@@ -475,6 +402,7 @@
     <footer>
         <p>© 2026 Game Guides Hub. All rights reserved.</p>
         <div class="footer-links">
+            <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
             <a href="privacy.html">Privacy Policy</a>
