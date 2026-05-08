@@ -8,14 +8,28 @@ Game Guides Hub is a static website deployed on GitHub Pages, providing comprehe
 
 ## Project Structure
 
+### Root Directory
 - **index.html** - Main landing page with featured games and latest guides
+- **favicon.ico** - Website favicon
+- **robots.txt** - Search engine crawler rules
+- **sitemap.xml** - XML sitemap for search engines
+
+### Pages Directory (`pages/`)
 - **guides.html** - Game guides library page with search and filtering
 - **tools.html** - Essential gaming tools and software recommendations
 - **about.html** - About page with mission and team information
 - **contact.html** - Contact page with email information
 - **privacy.html** - Privacy policy (required for AdSense)
-- **game-guide-template.html** - Template for creating new game guide pages
+
+### Guides Directory (`guides/`)
 - **elden-ring-beginner-guide.html** - Example game guide (Elden Ring beginner guide)
+- **game-guide-template.html** - Template for creating new game guide pages
+- **game-guide-adsense-template.html** - AdSense-optimized template
+
+### Docs Directory (`docs/`)
+- **CLAUDE.md** - This file - development guide for Claude Code
+- **ADSENSE.md** - Google AdSense integration guide
+- **SEO_README.md** - SEO optimization guide and next steps
 
 ## Development Setup
 
@@ -35,21 +49,25 @@ The site is automatically deployed to GitHub Pages from the `main` branch. Push 
 ## Content Guidelines
 
 ### Creating New Game Guides
-1. Copy `game-guide-template.html` as a new file
+1. Copy `guides/game-guide-template.html` as a new file in the `guides/` directory
 2. Replace template placeholders with actual content
 3. Update meta tags for SEO:
    - Title: "[Game Name] [Guide Type] | Game Guides Hub"
    - Description: Include game name, guide type, and key features
    - Keywords: Game name, genre, platform, guide-specific terms
-4. Add internal links to connect related guides
-5. Include AdSense placeholder positions (top banner, in-article, sidebar)
-6. Target 2000+ words for comprehensive SEO content
+4. Update navigation links to use relative paths (`../pages/` for navigation)
+5. Add internal links to connect related guides
+6. Include AdSense placeholder positions (top banner, in-article, sidebar)
+7. Target 2000+ words for comprehensive SEO content
 
 ### Link Structure
-- Update `index.html` Featured Games section to link to new guides
-- Update `guides.html` Featured Games section to link to new guides
+- Update `index.html` Featured Games section to link to new guides (`guides/your-guide.html`)
+- Update `pages/guides.html` Featured Games section to link to new guides (use relative path)
 - Add sidebar links in existing guides to point to related content
-- Ensure all navigation links point to correct files
+- Ensure all navigation links point to correct files:
+  - In `index.html`: `pages/` prefix for all links except index
+  - In `pages/` directory files: relative paths (`../index.html`, `guides.html`, etc.)
+  - In `guides/` directory files: use `../pages/` for navigation
 
 ### SEO Best Practices
 - Include game name in title and description
