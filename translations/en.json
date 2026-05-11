@@ -1,0 +1,87 @@
+{
+  "common": {
+    "nav.home": "Home",
+    "nav.guides": "Game Guides",
+    "nav.tools": "Tools",
+    "nav.about": "About",
+    "nav.contact": "Contact",
+    "nav.privacy": "Privacy",
+    "footer.copyright": "© 2026 Game Guides Hub. All rights reserved.",
+    "footer.privacy": "Privacy Policy"
+  },
+  "index": {
+    "hero.title": "Level Up Your Gaming Experience",
+    "hero.subtitle": "Your ultimate destination for comprehensive game walkthroughs, expert tips, and unbeatable strategies. From indie gems to AAA blockbusters.",
+    "hero.search.placeholder": "Search game guides, tips, and walkthroughs...",
+    "section.featuredGames": "Featured Games",
+    "section.latestGuides": "Latest Game Guides",
+    "section.essentialTools": "Essential Gaming Tools"
+  },
+  "guides": {
+    "title": "Game Guides Library",
+    "subtitle": "Explore our comprehensive collection of walkthroughs, tips, and strategies",
+    "search.placeholder": "Search game guides by name, genre, or platform...",
+    "section.featuredGames": "Featured Games",
+    "section.popularGuides": "Popular Guides This Week"
+  },
+  "tools": {
+    "title": "Essential Gaming Tools",
+    "subtitle": "Discover best software to enhance your gaming experience"
+  },
+  "about": {
+    "title": "About Game Guides Hub",
+    "subtitle": "Your trusted source for expert gaming knowledge",
+    "section.ourStory.title": "Our Story",
+    "section.mission.title": "🎯 Our Mission",
+    "section.mission.subtitle": "To provide gamers worldwide with accessible, accurate, and comprehensive guides that enhance their gaming experience and help them discover every hidden gem in their favorite games.",
+    "mission.accuracy.title": "✅ Accuracy First",
+    "mission.accuracy.desc": "Every guide is thoroughly tested and verified for accuracy",
+    "mission.accessibility.title": "🎓 Accessibility",
+    "mission.accessibility.desc": "Complex strategies explained in simple, easy-to-follow terms",
+    "mission.updates.title": "🔄 Regular Updates",
+    "mission.updates.desc": "Content stays current with game patches and new releases",
+    "mission.community.title": "🌍 Community Focus",
+    "mission.community.desc": "Built by gamers, for gamers with community input",
+    "section.whatWeCover.title": "What We Cover",
+    "section.whatWeCover.subtitle": "Our guides span across multiple gaming platforms and genres, including:",
+    "section.whyChooseUs.title": "Why Choose Us",
+    "section.whyChooseUs.subtitle": "Unlike other gaming websites, we focus on quality over quantity. Every guide is crafted with care, featuring:",
+    "btn.exploreGuides": "Explore Our Guides"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Have questions or suggestions? We'd love to hear from you",
+    "card.title": "Get in Touch",
+    "card.desc": "Whether you have questions about our guides, want to suggest a new game, or are interested in collaboration, feel free to reach out.",
+    "email.label": "📧 Email Address",
+    "btn.sendEmail": "Send Email",
+    "reason.guideQuestions.title": "❓ Guide Questions",
+    "reason.guideQuestions.desc": "Need help with a specific guide or have suggestions?",
+    "reason.gameRequests.title": "🎮 Game Requests",
+    "reason.gameRequests.desc": "Want us to cover a particular game?",
+    "reason.collaboration.title": "🤝 Collaboration",
+    "reason.collaboration.desc": "Interested in partnerships or content collaborations?",
+    "responseTime.title": "⏰ Response Time",
+    "responseTime.desc": "We typically respond to emails within 24-48 hours"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last Updated: April 1, 2026",
+    "toc.title": "📋 Table of Contents",
+    "section1.title": "1. Introduction",
+    "section1.desc": "Welcome to Game Guides Hub. This privacy policy is intended to inform you about how we collect, use, disclose, and protect your personal information. By using this website, you agree to terms and conditions of this privacy policy.",
+    "section2.title": "2. Information We Collect",
+    "section2.desc": "We may collect following types of information:",
+    "section2.item1": "Browsing Data: Including your IP address, browser type, access time, and pages visited",
+    "section2.item2": "Device Information: Including your device model, operating system, and screen resolution",
+    "section2.item3": "Cookies: We use cookies to improve user experience and conduct website analytics",
+    "section2.item4": "Email Information: If you contact us via email, we may collect your email address",
+    "section3.title": "3. How We Use Your Information",
+    "section3.desc": "The information we collect is used for following purposes:",
+    "section4.title": "4. Third-Party Services",
+    "section4.desc": "This website may use third-party services, including but not limited to:",
+    "section11.title": "11. Contact Us",
+    "section11.desc": "If you have any questions or concerns about this privacy policy, please contact us through following methods:",
+    "btn.contactUs": "Contact Us"
+  }
+}

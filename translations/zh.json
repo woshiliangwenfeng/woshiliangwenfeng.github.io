@@ -1,0 +1,87 @@
+{
+  "common": {
+    "nav.home": "首页",
+    "nav.guides": "游戏攻略",
+    "nav.tools": "工具",
+    "nav.about": "关于",
+    "nav.contact": "联系我们",
+    "nav.privacy": "隐私政策",
+    "footer.copyright": "© 2026 Game Guides Hub. 保留所有权利。",
+    "footer.privacy": "隐私政策"
+  },
+  "index": {
+    "hero.title": "提升您的游戏体验",
+    "hero.subtitle": "您的终极游戏指南、专家技巧和无敌策略目的地。从独立游戏到AAA大作。",
+    "hero.search.placeholder": "搜索游戏攻略、技巧和通关指南...",
+    "section.featuredGames": "精选游戏",
+    "section.latestGuides": "最新游戏攻略",
+    "section.essentialTools": "必备游戏工具"
+  },
+  "guides": {
+    "title": "游戏攻略库",
+    "subtitle": "探索我们全面的通关指南、技巧和策略集合",
+    "search.placeholder": "按游戏名称、类型或平台搜索攻略...",
+    "section.featuredGames": "精选游戏",
+    "section.popularGuides": "本周热门攻略"
+  },
+  "tools": {
+    "title": "必备游戏工具",
+    "subtitle": "发现提升游戏体验的最佳软件"
+  },
+  "about": {
+    "title": "关于 Game Guides Hub",
+    "subtitle": "您值得信赖的专业游戏知识来源",
+    "section.ourStory.title": "我们的故事",
+    "section.mission.title": "🎯 我们的使命",
+    "section.mission.subtitle": "为全球玩家提供易于理解、准确全面的攻略，提升游戏体验，帮助发现喜爱的游戏中的每一个隐藏宝藏。",
+    "mission.accuracy.title": "✅ 准确性优先",
+    "mission.accuracy.desc": "每篇攻略都经过彻底测试和验证",
+    "mission.accessibility.title": "🎓 易于理解",
+    "mission.accessibility.desc": "用简单易懂的方式解释复杂策略",
+    "mission.updates.title": "🔄 定期更新",
+    "mission.updates.desc": "内容随游戏补丁和新发布保持最新",
+    "mission.community.title": "🌍 社区导向",
+    "mission.community.desc": "由玩家为玩家打造，融入社区反馈",
+    "section.whatWeCover.title": "涵盖内容",
+    "section.whatWeCover.subtitle": "我们的攻略涵盖多个游戏平台和类型，包括：",
+    "section.whyChooseUs.title": "选择我们的理由",
+    "section.whyChooseUs.subtitle": "与其他游戏网站不同，我们注重质量而非数量。每篇攻略都精心制作，具有以下特点：",
+    "btn.exploreGuides": "探索我们的攻略"
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "有问题或建议？我们很乐意听到您的声音",
+    "card.title": "联系我们",
+    "card.desc": "无论您对攻略有疑问、想推荐新游戏，还是对合作感兴趣，请随时联系我们。",
+    "email.label": "📧 电子邮件地址",
+    "btn.sendEmail": "发送邮件",
+    "reason.guideQuestions.title": "❓ 攻略问题",
+    "reason.guideQuestions.desc": "对特定攻略需要帮助或有建议？",
+    "reason.gameRequests.title": "🎮 游戏推荐",
+    "reason.gameRequests.desc": "希望我们覆盖特定游戏？",
+    "reason.collaboration.title": "🤝 合作",
+    "reason.collaboration.desc": "对合作或内容合作感兴趣？",
+    "responseTime.title": "⏰ 回复时间",
+    "responseTime.desc": "我们通常在24-48小时内回复邮件"
+  },
+  "privacy": {
+    "title": "隐私政策",
+    "lastUpdated": "最后更新：2026年4月1日",
+    "toc.title": "📋 目录",
+    "section1.title": "1. 简介",
+    "section1.desc": "欢迎来到 Game Guides Hub。本隐私政策旨在告知您我们如何收集、使用、披露和保护您的个人信息。使用本网站即表示您同意本隐私政策的条款和条件。",
+    "section2.title": "2. 我们收集的信息",
+    "section2.desc": "我们可能收集以下类型的信息：",
+    "section2.item1": "浏览数据：包括您的IP地址、浏览器类型、访问时间和访问的页面",
+    "section2.item2": "设备信息：包括您的设备型号、操作系统和屏幕分辨率",
+    "section2.item3": "Cookie：我们使用cookie来改善用户体验并进行网站分析",
+    "section2.item4": "电子邮件信息：如果您通过电子邮件联系我们，我们可能会收集您的电子邮件地址",
+    "section3.title": "3. 我们如何使用您的信息",
+    "section3.desc": "我们收集的信息用于以下目的：",
+    "section4.title": "4. 第三方服务",
+    "section4.desc": "本网站可能使用第三方服务，包括但不限于：",
+    "section11.title": "11. 联系我们",
+    "section11.desc": "如果您对本隐私政策有任何疑问或担忧，请通过以下方式联系我们：",
+    "btn.contactUs": "联系我们"
+  }
+}

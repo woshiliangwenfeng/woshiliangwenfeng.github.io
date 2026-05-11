@@ -235,6 +235,7 @@
             }
         }
     </style>
+    <script src="../js/i18n/i18n.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -244,54 +245,54 @@
                 GameGuidesHub
             </a>
             <div class="nav-links">
-                <a href="../index.html">Home</a>
-                <a href="guides.html">Game Guides</a>
-                <a href="tools.html">Tools</a>
-                <a href="about.html" class="active">About</a>
-                <a href="contact.html">Contact</a>
+                <a href="../index.html" data-i18n="nav.home">Home</a>
+                <a href="guides.html" data-i18n="nav.guides">Game Guides</a>
+                <a href="tools.html" data-i18n="nav.tools">Tools</a>
+                <a href="about.html" class="active" data-i18n="nav.about">About</a>
+                <a href="contact.html" data-i18n="nav.contact">Contact</a>
             </div>
         </div>
     </nav>
 
     <div class="container">
         <div class="page-header">
-            <h1>About Game Guides Hub</h1>
-            <p>Your trusted source for expert gaming knowledge</p>
+            <h1 data-i18n="title">About Game Guides Hub</h1>
+            <p data-i18n="subtitle">Your trusted source for expert gaming knowledge</p>
         </div>
 
         <div class="section">
-            <h2>Our Story</h2>
+            <h2 data-i18n="section.ourStory.title">Our Story</h2>
             <p>Game Guides Hub was created by passionate gamers who believe that everyone deserves access to high-quality, reliable gaming information. We understand the frustration of getting stuck in a game or missing out on hidden content, which is why we're dedicated to creating comprehensive guides that help players of all skill levels.</p>
             <p>Our team consists of experienced gamers, tech enthusiasts, and content creators who spend hundreds of hours testing strategies, exploring hidden areas, and documenting every detail to bring you the most accurate and helpful guides possible.</p>
         </div>
 
         <div class="highlight">
-            <h2>🎯 Our Mission</h2>
-            <p>To provide gamers worldwide with accessible, accurate, and comprehensive guides that enhance their gaming experience and help them discover every hidden gem in their favorite games.</p>
+            <h2 data-i18n="section.mission.title">🎯 Our Mission</h2>
+            <p data-i18n="section.mission.subtitle">To provide gamers worldwide with accessible, accurate, and comprehensive guides that enhance their gaming experience and help them discover every hidden gem in their favorite games.</p>
 
             <div class="mission-points">
                 <div class="mission-point">
-                    <h3>✅ Accuracy First</h3>
-                    <p>Every guide is thoroughly tested and verified for accuracy</p>
+                    <h3 data-i18n="section.mission.points.0.title">✅ Accuracy First</h3>
+                    <p data-i18n="section.mission.points.0.desc">Every guide is thoroughly tested and verified for accuracy</p>
                 </div>
                 <div class="mission-point">
-                    <h3>🎓 Accessibility</h3>
-                    <p>Complex strategies explained in simple, easy-to-follow terms</p>
+                    <h3 data-i18n="section.mission.points.1.title">🎓 Accessibility</h3>
+                    <p data-i18n="section.mission.points.1.desc">Complex strategies explained in simple, easy-to-follow terms</p>
                 </div>
                 <div class="mission-point">
-                    <h3>🔄 Regular Updates</h3>
-                    <p>Content stays current with game patches and new releases</p>
+                    <h3 data-i18n="section.mission.points.2.title">🔄 Regular Updates</h3>
+                    <p data-i18n="section.mission.points.2.desc">Content stays current with game patches and new releases</p>
                 </div>
                 <div class="mission-point">
-                    <h3>🌍 Community Focus</h3>
-                    <p>Built by gamers, for gamers with community input</p>
+                    <h3 data-i18n="section.mission.points.3.title">🌍 Community Focus</h3>
+                    <p data-i18n="section.mission.points.3.desc">Built by gamers, for gamers with community input</p>
                 </div>
             </div>
         </div>
 
         <div class="section">
-            <h2>What We Cover</h2>
-            <p>Our guides span across multiple gaming platforms and genres, including:</p>
+            <h2 data-i18n="section.whatWeCover.title">What We Cover</h2>
+            <p data-i18n="section.whatWeCover.subtitle">Our guides span across multiple gaming platforms and genres, including:</p>
             <ul style="margin-left: 2rem; color: #a0aec0; line-height: 2;">
                 <li>🎮 <strong>AAA Blockbusters</strong> - Complete walkthroughs for major titles</li>
                 <li>🕹️ <strong>Indie Games</strong> - Discovering hidden gems and their secrets</li>
@@ -302,8 +303,8 @@
         </div>
 
         <div class="section">
-            <h2>Why Choose Us</h2>
-            <p>Unlike other gaming websites, we focus on quality over quantity. Every guide is crafted with care, featuring:</p>
+            <h2 data-i18n="section.whyChooseUs.title">Why Choose Us</h2>
+            <p data-i18n="section.whyChooseUs.subtitle">Unlike other gaming websites, we focus on quality over quantity. Every guide is crafted with care, featuring:</p>
             <ul style="margin-left: 2rem; color: #a0aec0; line-height: 2;">
                 <li>✨ Detailed step-by-step instructions</li>
                 <li>📸 High-quality screenshots and visual aids</li>
@@ -312,7 +313,7 @@
                 <li>🆘 Troubleshooting and common issues</li>
             </ul>
 
-            <a href="guides.html" class="btn">Explore Our Guides</a>
+            <a href="guides.html" class="btn" data-i18n="btn.exploreGuides">Explore Our Guides</a>
         </div>
     </div>
 
@@ -324,5 +325,6 @@
             <a href="privacy.html">Privacy Policy</a>
         </div>
     </footer>
+    <script>document.addEventListener('DOMContentLoaded', () => { initI18n('about'); });</script>
 </body>
 </html>

@@ -300,6 +300,7 @@
             }
         }
     </style>
+    <script src="../js/i18n/i18n.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -309,26 +310,26 @@
                 GameGuidesHub
             </a>
             <div class="nav-links">
-                <a href="../index.html">Home</a>
-                <a href="guides.html" class="active">Game Guides</a>
-                <a href="tools.html">Tools</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
+                <a href="../index.html" data-i18n="nav.home">Home</a>
+                <a href="guides.html" class="active" data-i18n="nav.guides">Game Guides</a>
+                <a href="tools.html" data-i18n="nav.tools">Tools</a>
+                <a href="about.html" data-i18n="nav.about">About</a>
+                <a href="contact.html" data-i18n="nav.contact">Contact</a>
             </div>
         </div>
     </nav>
 
     <div class="container">
         <div class="page-header">
-            <h1>Game Guides Library</h1>
-            <p>Explore our comprehensive collection of walkthroughs, tips, and strategies</p>
+            <h1 data-i18n="title">Game Guides Library</h1>
+            <p data-i18n="subtitle">Explore our comprehensive collection of walkthroughs, tips, and strategies</p>
 
             <div class="search-box">
-                <input type="text" placeholder="Search game guides by name, genre, or platform...">
+                <input type="text" data-i18n-placeholder="search.placeholder" placeholder="Search game guides by name, genre, or platform...">
             </div>
         </div>
 
-        <h2 class="section-title">Featured Games</h2>
+        <h2 class="section-title" data-i18n="section.featuredGames">Featured Games</h2>
         <div class="games-grid">
             <a href="../guides/elden-ring-beginner-guide.html" class="game-card">
                 <div class="game-image">⚔️</div>
@@ -409,7 +410,7 @@
             </div>
         </div>
 
-        <h2 class="section-title">Popular Guides This Week</h2>
+        <h2 class="section-title" data-i18n="section.popularGuides">Popular Guides This Week</h2>
         <div class="guides-list">
             <div class="guide-item">
                 <span class="guide-title">Elden Ring DLC: Shadow of the Erdtree Complete Walkthrough</span>
@@ -455,5 +456,10 @@
             <a href="privacy.html">Privacy Policy</a>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initI18n('guides');
+        });
+    </script>
 </body>
 </html>
