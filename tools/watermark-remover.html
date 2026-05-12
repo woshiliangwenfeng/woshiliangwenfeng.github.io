@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" sizes="16x16">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" sizes="32x32">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-35CP87Q5L4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-35CP87Q5L4');
+    </script>
+    <meta name="description" content="Remove watermarks from images using our free online tool. Upload your image and download the clean version instantly.">
+    <meta name="keywords" content="watermark remover, remove watermark, image editing, photo editor, free tool">
+    <meta name="author" content="G Hub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://woshiliangwenfeng.github.io/tools/watermark-remover.html">
+    <title>Watermark Remover - G Hub</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Watermark Remover - G Hub">
+    <meta property="og:description" content="Remove watermarks from images using our free online tool.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://woshiliangwenfeng.github.io/tools/watermark-remover.html">
+    <meta property="og:image" content="https://woshiliangwenfeng.github.io/og-image.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="G Hub">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Watermark Remover - G Hub">
+    <meta name="twitter:description" content="Remove watermarks from images using our free online tool.">
+    <meta name="twitter:image" content="https://woshiliangwenfeng.github.io/og-image.jpg">
+
+    <link rel="stylesheet" href="../css/figma-design.css">
+    <script src="../js/i18n/i18n.js?v=15"></script>
+    <style>
+        .watermark-tool-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--spacing-xl);
+        }
+
+        .upload-zone {
+            border: 2px dashed var(--color-hairline);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xxl);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: var(--color-surface-soft);
+        }
+
+        .upload-zone:hover,
+        .upload-zone.dragover {
+            border-color: var(--color-primary);
+            background-color: var(--color-hairline-soft);
+        }
+
+        .upload-zone-icon {
+            font-size: 4rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .preview-section {
+            display: none;
+            margin-top: var(--spacing-xl);
+        }
+
+        .preview-section.active {
+            display: block;
+        }
+
+        .image-preview {
+            display: flex;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        @media (max-width: 768px) {
+            .image-preview {
+                flex-direction: column;
+            }
+        }
+
+        .preview-card {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .preview-card h3 {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 540;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 75%;
+            background-color: var(--color-surface-soft);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--color-hairline);
+        }
+
+        .image-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .selection-overlay {
+            position: absolute;
+            border: 2px dashed #ff3d8b;
+            background-color: rgba(255, 61, 139, 0.1);
+            pointer-events: none;
+            display: none;
+        }
+
+        .selection-overlay.active {
+            display: block;
+        }
+
+        .canvas-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .canvas-container canvas {
+            width: 100%;
+            height: 100%;
+            cursor: crosshair;
+        }
+
+        .controls {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .intensity-slider {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .intensity-slider label {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 330;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .intensity-slider input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: var(--color-hairline);
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .intensity-slider input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            cursor: pointer;
+        }
+
+        .actions {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .instructions {
+            background-color: var(--color-block-cream);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .instructions h4 {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 540;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .instructions ul {
+            padding-left: var(--spacing-lg);
+        }
+
+        .instructions li {
+            font-size: 14px;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .status-message {
+            text-align: center;
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-lg);
+            display: none;
+        }
+
+        .status-message.active {
+            display: block;
+        }
+
+        .status-message.success {
+            background-color: var(--color-block-mint);
+        }
+
+        .status-message.error {
+            background-color: var(--color-block-pink);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="../index.html" class="nav-logo">G Hub</a>
+        <div class="nav-links">
+            <a href="../index.html" data-i18n="nav.home">Home</a>
+            <a href="../pages/guides.html" data-i18n="nav.guides">Game Guides</a>
+            <a href="../pages/tools.html" data-i18n="nav.tools">Tools</a>
+            <a href="../pages/about.html" data-i18n="nav.about">About</a>
+            <a href="../pages/contact.html" data-i18n="nav.contact">Contact</a>
+        </div>
+        <div class="nav-actions">
+            <div class="nav-language-switcher"></div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="section container">
+        <div class="text-center mb-xxl">
+            <h1 class="typography-display-xl mb-md" data-i18n="watermark-remover.title">Watermark Remover</h1>
+            <p class="typography-body-lg" style="max-width: 680px; margin: 0 auto;" data-i18n="watermark-remover.subtitle">Remove watermarks from your images quickly and easily</p>
+        </div>
+    </section>
+
+    <!-- Tool Section -->
+    <div id="tool" class="section">
+        <div class="watermark-tool-container">
+            <!-- Instructions -->
+            <div class="instructions">
+                <h4 data-i18n="watermark-remover.instructions.title">How to use:</h4>
+                <ul>
+                    <li data-i18n="watermark-remover.instructions.step1">1. Upload an image with a watermark</li>
+                    <li data-i18n="watermark-remover.instructions.step2">2. Click and drag on the image to select the watermark area</li>
+                    <li data-i18n="watermark-remover.instructions.step3">3. Adjust the removal intensity using the slider</li>
+                    <li data-i18n="watermark-remover.instructions.step4">4. Click "Remove Watermark" and download the result</li>
+                </ul>
+            </div>
+
+            <!-- Upload Zone -->
+            <div class="upload-zone" id="uploadZone">
+                <div class="upload-zone-icon">📁</div>
+                <h3 class="typography-headline mb-sm" data-i18n="watermark-remover.upload.title">Drop your image here</h3>
+                <p class="typography-body-sm mb-md" data-i18n="watermark-remover.upload.subtitle">or click to browse</p>
+                <p class="typography-caption" data-i18n="watermark-remover.upload.supported">Supported formats: JPG, PNG, WebP</p>
+                <input type="file" class="file-input" id="fileInput" accept="image/jpeg,image/png,image/webp">
+            </div>
+
+            <!-- Status Message -->
+            <div class="status-message" id="statusMessage"></div>
+
+            <!-- Preview Section -->
+            <div class="preview-section" id="previewSection">
+                <div class="image-preview">
+                    <!-- Original Image -->
+                    <div class="preview-card">
+                        <h3 data-i18n="watermark-remover.preview.original">Original Image</h3>
+                        <div class="image-container" id="originalContainer">
+                            <img id="originalImage" src="" alt="Original image">
+                        </div>
+                    </div>
+
+                    <!-- Processed Image -->
+                    <div class="preview-card">
+                        <h3 data-i18n="watermark-remover.preview.processed">Processed Image</h3>
+                        <div class="image-container" id="processedContainer">
+                            <img id="processedImage" src="" alt="Processed image">
+                            <div class="canvas-container" id="canvasContainer">
+                                <canvas id="selectionCanvas"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <div class="controls">
+                    <div class="intensity-slider">
+                        <label data-i18n="watermark-remover.controls.intensity">Removal Intensity: <span id="intensityValue">50</span>%</label>
+                        <input type="range" id="intensitySlider" min="1" max="100" value="50">
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="actions">
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" id="processBtn" data-i18n="watermark-remover.buttons.process">Remove Watermark</button>
+                        <button class="btn btn-secondary" id="downloadBtn" disabled data-i18n="watermark-remover.buttons.download">Download</button>
+                        <button class="btn btn-tertiary" id="resetBtn" data-i18n="watermark-remover.buttons.reset">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <div style="font-family: var(--font-display); font-size: 24px; font-weight: 540; margin-bottom: var(--spacing-xs);">G Hub</div>
+                <p class="typography-caption" style="margin-bottom: var(--spacing-sm);">© 2026 G Hub.</p>
+                <p class="typography-caption" data-i18n="footer.copyright">All rights reserved.</p>
+            </div>
+            <div class="footer-links">
+                <a href="../index.html" data-i18n="nav.home">Home</a>
+                <a href="../pages/about.html" data-i18n="nav.about">About</a>
+                <a href="../pages/contact.html" data-i18n="nav.contact">Contact</a>
+                <a href="../pages/privacy.html" data-i18n="nav.privacy">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initI18n('watermark-remover');
+            initWatermarkRemover();
+        });
+
+        function initWatermarkRemover() {
+            const uploadZone = document.getElementById('uploadZone');
+            const fileInput = document.getElementById('fileInput');
+            const previewSection = document.getElementById('previewSection');
+            const originalImage = document.getElementById('originalImage');
+            const processedImage = document.getElementById('processedImage');
+            const selectionCanvas = document.getElementById('selectionCanvas');
+            const canvasContainer = document.getElementById('canvasContainer');
+            const intensitySlider = document.getElementById('intensitySlider');
+            const intensityValue = document.getElementById('intensityValue');
+            const processBtn = document.getElementById('processBtn');
+            const downloadBtn = document.getElementById('downloadBtn');
+            const resetBtn = document.getElementById('resetBtn');
+            const statusMessage = document.getElementById('statusMessage');
+
+            let originalImageData = null;
+            let selectedRegion = null;
+            let isDragging = false;
+            let dragStart = { x: 0, y: 0 };
+
+            // Upload zone events
+            uploadZone.addEventListener('click', () => fileInput.click());
+
+            uploadZone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                uploadZone.classList.add('dragover');
+            });
+
+            uploadZone.addEventListener('dragleave', () => {
+                uploadZone.classList.remove('dragover');
+            });
+
+            uploadZone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                uploadZone.classList.remove('dragover');
+                const file = e.dataTransfer.files[0];
+                if (file && file.type.startsWith('image/')) {
+                    loadImage(file);
+                }
+            });
+
+            fileInput.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    loadImage(file);
+                }
+            });
+
+            function loadImage(file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    originalImage.src = e.target.result;
+                    processedImage.src = e.target.result;
+
+                    originalImage.onload = () => {
+                        setupCanvas();
+                        previewSection.classList.add('active');
+                        uploadZone.style.display = 'none';
+                        selectedRegion = null;
+                        downloadBtn.disabled = true;
+                    };
+                };
+                reader.readAsDataURL(file);
+            }
+
+            function setupCanvas() {
+                const container = document.getElementById('processedContainer');
+                const rect = container.getBoundingClientRect();
+
+                selectionCanvas.width = rect.width;
+                selectionCanvas.height = rect.height;
+
+                const ctx = selectionCanvas.getContext('2d');
+                ctx.clearRect(0, 0, selectionCanvas.width, selectionCanvas.height);
+            }
+
+            // Canvas selection events
+            selectionCanvas.addEventListener('mousedown', (e) => {
+                const rect = selectionCanvas.getBoundingClientRect();
+                dragStart.x = e.clientX - rect.left;
+                dragStart.y = e.clientY - rect.top;
+                isDragging = true;
+            });
+
+            selectionCanvas.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+
+                const rect = selectionCanvas.getBoundingClientRect();
+                const currentX = e.clientX - rect.left;
+                const currentY = e.clientY - rect.top;
+
+                const ctx = selectionCanvas.getContext('2d');
+                ctx.clearRect(0, 0, selectionCanvas.width, selectionCanvas.height);
+
+                const width = currentX - dragStart.x;
+                const height = currentY - dragStart.y;
+
+                ctx.strokeStyle = '#ff3d8b';
+                ctx.lineWidth = 2;
+                ctx.setLineDash([5, 5]);
+                ctx.fillStyle = 'rgba(255, 61, 139, 0.1)';
+
+                ctx.fillRect(dragStart.x, dragStart.y, width, height);
+                ctx.strokeRect(dragStart.x, dragStart.y, width, height);
+            });
+
+            selectionCanvas.addEventListener('mouseup', (e) => {
+                if (!isDragging) return;
+
+                const rect = selectionCanvas.getBoundingClientRect();
+                const endX = e.clientX - rect.left;
+                const endY = e.clientY - rect.top;
+
+                selectedRegion = {
+                    x: Math.min(dragStart.x, endX),
+                    y: Math.min(dragStart.y, endY),
+                    width: Math.abs(endX - dragStart.x),
+                    height: Math.abs(endY - dragStart.y)
+                };
+
+                isDragging = false;
+
+                if (selectedRegion.width > 10 && selectedRegion.height > 10) {
+                    showStatus('Watermark area selected. Click "Remove Watermark" to process.', 'success');
+                }
+            });
+
+            selectionCanvas.addEventListener('mouseleave', () => {
+                if (isDragging) {
+                    isDragging = false;
+                }
+            });
+
+            // Intensity slider
+            intensitySlider.addEventListener('input', (e) => {
+                intensityValue.textContent = e.target.value;
+            });
+
+            // Process button
+            processBtn.addEventListener('click', () => {
+                if (!selectedRegion || selectedRegion.width < 10 || selectedRegion.height < 10) {
+                    showStatus('Please select a watermark area first.', 'error');
+                    return;
+                }
+
+                removeWatermark();
+            });
+
+            function removeWatermark() {
+                const tempCanvas = document.createElement('canvas');
+                const tempCtx = tempCanvas.getContext('2d');
+
+                tempCanvas.width = originalImage.naturalWidth;
+                tempCanvas.height = originalImage.naturalHeight;
+
+                tempCtx.drawImage(originalImage, 0, 0);
+
+                const imageData = tempCtx.getImageData(0, 0, tempCanvas.width, tempCanvas.height);
+                const data = imageData.data;
+
+                const scaleX = tempCanvas.width / selectionCanvas.width;
+                const scaleY = tempCanvas.height / selectionCanvas.height;
+
+                const startX = Math.floor(selectedRegion.x * scaleX);
+                const startY = Math.floor(selectedRegion.y * scaleY);
+                const endX = Math.floor((selectedRegion.x + selectedRegion.width) * scaleX);
+                const endY = Math.floor((selectedRegion.y + selectedRegion.height) * scaleY);
+
+                const intensity = parseInt(intensitySlider.value) / 100;
+
+                for (let y = startY; y < endY; y++) {
+                    for (let x = startX; x < endX; x++) {
+                        const index = (y * tempCanvas.width + x) * 4;
+
+                        const neighbors = getNeighborColors(data, x, y, tempCanvas.width, tempCanvas.height);
+                        data[index] = blendPixel(data[index], neighbors.r, intensity);
+                        data[index + 1] = blendPixel(data[index + 1], neighbors.g, intensity);
+                        data[index + 2] = blendPixel(data[index + 2], neighbors.b, intensity);
+                    }
+                }
+
+                tempCtx.putImageData(imageData, 0, 0);
+                processedImage.src = tempCanvas.toDataURL('image/png');
+
+                downloadBtn.disabled = false;
+                showStatus('Watermark removed successfully!', 'success');
+            }
+
+            function getNeighborColors(data, x, y, width, height) {
+                const directions = [
+                    [-1, 0], [1, 0], [0, -1], [0, 1],
+                    [-1, -1], [1, -1], [-1, 1], [1, 1]
+                ];
+
+                let totalR = 0, totalG = 0, totalB = 0, count = 0;
+
+                directions.forEach(([dx, dy]) => {
+                    const nx = x + dx;
+                    const ny = y + dy;
+
+                    if (nx >= 0 && nx < width && ny >= 0 && ny < height) {
+                        const index = (ny * width + nx) * 4;
+                        totalR += data[index];
+                        totalG += data[index + 1];
+                        totalB += data[index + 2];
+                        count++;
+                    }
+                });
+
+                return {
+                    r: count > 0 ? Math.floor(totalR / count) : 128,
+                    g: count > 0 ? Math.floor(totalG / count) : 128,
+                    b: count > 0 ? Math.floor(totalB / count) : 128
+                };
+            }
+
+            function blendPixel(current, neighbor, intensity) {
+                return Math.floor(current * (1 - intensity) + neighbor * intensity);
+            }
+
+            // Download button
+            downloadBtn.addEventListener('click', () => {
+                const link = document.createElement('a');
+                link.download = 'watermark-removed.png';
+                link.href = processedImage.src;
+                link.click();
+            });
+
+            // Reset button
+            resetBtn.addEventListener('click', () => {
+                previewSection.classList.remove('active');
+                uploadZone.style.display = 'block';
+                selectedRegion = null;
+                downloadBtn.disabled = true;
+                fileInput.value = '';
+
+                const ctx = selectionCanvas.getContext('2d');
+                ctx.clearRect(0, 0, selectionCanvas.width, selectionCanvas.height);
+
+                showStatus('', '');
+);
+            });
+
+            function showStatus(message, type) {
+                if (!message) {
+                    statusMessage.classList.remove('active');
+                    return;
+                }
+
+                statusMessage.textContent = message;
+                statusMessage.className = 'status-message active ' + type;
+            }
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                if (previewSection.classList.contains('active')) {
+                    setupCanvas();
+                }
+            });
+        }
+    </script>
+</body>
+</html>

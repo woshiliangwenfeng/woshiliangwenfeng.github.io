@@ -26,7 +26,10 @@
   },
   "tools": {
     "title": "必备游戏工具",
-    "subtitle": "发现提升游戏体验的最佳软件"
+    "subtitle": "发现提升游戏体验的最佳软件",
+    "section.eyebrow": "软件推荐",
+    "section.title": "提升您的配置",
+    "section.subtitle": "从性能优化到社区建设，这些工具将改变您的游戏、录制和分享方式。"
   },
   "about": {
     "title": "关于 G Hub",
@@ -83,5 +86,33 @@
     "section11.title": "11. 联系我们",
     "section11.desc": "如果您对本隐私政策有任何疑问或担忧，请通过以下方式联系我们：",
     "btn.contactUs": "联系我们"
+  },
+  "watermark-remover": {
+    "title": "水印去除工具",
+    "subtitle": "快速轻松地去除图片中的水印",
+    "instructions": {
+      "title": "使用方法：",
+      "step1": "1. 上传带有水印的图片",
+      "step2": "2. 在图片上点击并拖动选择水印区域",
+      "step3": "3. 使用滑块调整去除强度",
+      "step4": "4. 点击'去除水印'并下载结果"
+    },
+    "upload": {
+      "title": "将图片拖放到此处",
+      "subtitle": "或点击浏览",
+      "supported": "支持的格式：JPG、PNG、WebP"
+    },
+    "preview": {
+      "original": "原始图片",
+      "processed": "处理后图片"
+    },
+    "controls": {
+      "intensity": "去除强度："
+    },
+    "buttons": {
+      "process": "去除水印",
+      "download": "下载",
+      "reset": "重置"
+    }
   }
 }

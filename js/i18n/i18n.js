@@ -155,32 +155,34 @@ function createLanguageSwitcher(containerSelector = '.nav-language-switcher') {
         transition: background 0.2s ease;
     `;
 
-    // 添加伪元素（滑块）
-    const style = document.createElement('style');
-    style.textContent = `
-        .figma-lang-checkbox::before {
-            content: '';
-            position: absolute;
-            width: 18px;
-            height: 18px;
-            background: #ffffff;
-            border-radius: 50%;
-            top: 2px;
-            left: 2px;
-            transition: transform 0.2s ease;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-        }
-        .figma-lang-checkbox:checked {
-            background: #000000;
-        }
-        .figma-lang-checkbox:checked::before {
-            transform: translateX(18px);
-        }
-        .figma-lang-checkbox:hover {
-            background: ${isEnglish ? '#d1d1d1' : '#1a1a1a'};
-        }
-    `;
-    container.appendChild(style);
+    // 添加伪元素（滑块）样式到 head
+    const styleId = 'figma-lang-switcher-style';
+    let style = document.getElementById(styleId);
+    if (!style) {
+        style = document.createElement('style');
+        style.id = styleId;
+        style.textContent = `
+            .figma-lang-checkbox::before {
+                content: '';
+                position: absolute;
+                width: 18px;
+                height: 18px;
+                background: #ffffff;
+                border-radius: 50%;
+                top: 2px;
+                left: 2px;
+                transition: transform 0.2s ease;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            }
+            .figma-lang-checkbox:checked {
+                background: #000000;
+            }
+            .figma-lang-checkbox:checked::before {
+                transform: translateX(18px);
+            }
+        `;
+        document.head.appendChild(style);
+    }
 
     // 点击切换语言
     checkbox.addEventListener('change', () => {

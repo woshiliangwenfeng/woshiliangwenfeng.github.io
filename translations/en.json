@@ -26,7 +26,10 @@
   },
   "tools": {
     "title": "Essential Gaming Tools",
-    "subtitle": "Discover best software to enhance your gaming experience"
+    "subtitle": "Discover best software to enhance your gaming experience",
+    "section.eyebrow": "SOFTWARE RECOMMENDATIONS",
+    "section.title": "Level up your setup",
+    "section.subtitle": "From performance optimization to community building, these tools transform how you play, record, and share."
   },
   "about": {
     "title": "About G Hub",
@@ -83,5 +86,33 @@
     "section11.title": "11. Contact Us",
     "section11.desc": "If you have any questions or concerns about this privacy policy, please contact us through following methods:",
     "btn.contactUs": "Contact Us"
+  },
+  "watermark-remover": {
+    "title": "Watermark Remover",
+    "subtitle": "Remove watermarks from your images quickly and easily",
+    "instructions": {
+      "title": "How to use:",
+      "step1": "1. Upload an image with a watermark",
+      "step2": "2. Click and drag on image to select watermark area",
+      "step3": "3. Adjust removal intensity using slider",
+      "step4": "4. Click 'Remove Watermark' and download result"
+    },
+    "upload": {
+      "title": "Drop your image here",
+      "subtitle": "or click to browse",
+      "supported": "Supported formats: JPG, PNG, WebP"
+    },
+    "preview": {
+      "original": "Original Image",
+      "processed": "Processed Image"
+    },
+    "controls": {
+      "intensity": "Removal Intensity:"
+    },
+    "buttons": {
+      "process": "Remove Watermark",
+      "download": "Download",
+      "reset": "Reset"
+    }
   }
 }
