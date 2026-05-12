@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** 为 Game Guides Hub 添加中英文语言切换功能，允许用户在页面右上角独立切换语言，并记住语言偏好
+**Goal:** 为 G Hub 添加中英文语言切换功能，允许用户在页面右上角独立切换语言，并记住语言偏好
 
 **Architecture:** 使用 JSON 翻译文件集中管理翻译内容，JavaScript 动态替换页面文本，支持 URL 参数和 localStorage
 
@@ -53,7 +53,7 @@ ls -la /Users/liangwf/PycharmProjects/woshiliangwenfeng.github.io/js/i18n
     "nav.about": "About",
     "nav.contact": "Contact",
     "nav.privacy": "Privacy",
-    "footer.copyright": "© 2026 Game Guides Hub. All rights reserved.",
+    "footer.copyright": "© 2026 G Hub. All rights reserved.",
     "footer.privacy": "Privacy Policy"
   },
   "index": {
@@ -76,7 +76,7 @@ ls -la /Users/liangwf/PycharmProjects/woshiliangwenfeng.github.io/js/i18n
     "subtitle": "Discover best software to enhance your gaming experience"
   },
   "about": {
-    "title": "About Game Guides Hub",
+    "title": "About G Hub",
     "subtitle": "Your trusted source for expert gaming knowledge",
     "section.ourStory.title": "Our Story",
     "section.mission.title": "🎯 Our Mission",
@@ -116,7 +116,7 @@ ls -la /Users/liangwf/PycharmProjects/woshiliangwenfeng.github.io/js/i18n
     "lastUpdated": "Last Updated: April 1, 2026",
     "toc.title": "📋 Table of Contents",
     "section1.title": "1. Introduction",
-    "section1.desc": "Welcome to Game Guides Hub. This privacy policy is intended to inform you about how we collect, use, disclose, and protect your personal information. By using this website, you agree to terms and conditions of this privacy policy.",
+    "section1.desc": "Welcome to G Hub. This privacy policy is intended to inform you about how we collect, use, disclose, and protect your personal information. By using this website, you agree to terms and conditions of this privacy policy.",
     "section2.title": "2. Information We Collect",
     "section2.desc": "We may collect following types of information:",
     "section2.item1": "Browsing Data: Including your IP address, browser type, access time, and pages visited",
@@ -152,7 +152,7 @@ ls -la /Users/liangwf/PycharmProjects/woshiliangwenfeng.github.io/js/i18n
     "nav.about": "关于",
     "nav.contact": "联系我们",
     "nav.privacy": "隐私政策",
-    "footer.copyright": "© 2026 Game Guides Hub. 保留所有权利。",
+    "footer.copyright": "© 2026 G Hub. 保留所有权利。",
     "footer.privacy": "隐私政策"
   },
   "index": {
@@ -175,7 +175,7 @@ ls -la /Users/liangwf/PycharmProjects/woshiliangwenfeng.github.io/js/i18n
     "subtitle": "发现提升游戏体验的最佳软件"
   },
   "about": {
-    "title": "关于 Game Guides Hub",
+    "title": "关于 G Hub",
     "subtitle": "您值得信赖的专业游戏知识来源",
     "section.ourStory.title": "我们的故事",
     "section.mission.title": "🎯 我们的使命",
@@ -215,7 +215,7 @@ ls -la /Users/liangwf/PycharmProjects/woshiliangwenfeng.github.io/js/i18n
     "lastUpdated": "最后更新：2026年4月1日",
     "toc.title": "📋 目录",
     "section1.title": "1. 简介",
-    "section1.desc": "欢迎来到 Game Guides Hub。本隐私政策旨在告知您我们如何收集、使用、披露和保护您的个人信息。使用本网站即表示您同意本隐私政策的条款和条件。",
+    "section1.desc": "欢迎来到 G Hub。本隐私政策旨在告知您我们如何收集、使用、披露和保护您的个人信息。使用本网站即表示您同意本隐私政策的条款和条件。",
     "section2.title": "2. 我们收集的信息",
     "section2.desc": "我们可能收集以下类型的信息：",
     "section2.item1": "浏览数据：包括您的IP地址、浏览器类型、访问时间和访问的页面",
@@ -578,7 +578,7 @@ async function initI18n(pageName) {
 - [ ] **Step 3: 修改页面标题和副标题添加 data-i18n 属性**
 
 ```html
-<h1 data-i18n="title">About Game Guides Hub</h1>
+<h1 data-i18n="title">About G Hub</h1>
 <p data-i18n="subtitle">Your trusted source for expert gaming knowledge</p>
 ```
 
@@ -778,7 +778,7 @@ async function initI18n(pageName) {
 
 ```html
 <h2 id="section1" data-i18n="section1.title">1. Introduction</h2>
-<p data-i18n="section1.desc">Welcome to Game Guides Hub. This privacy policy is intended to inform you about how we collect, use, disclose, and protect your personal information...</p>
+<p data-i18n="section1.desc">Welcome to G Hub. This privacy policy is intended to inform you about how we collect, use, disclose, and protect your personal information...</p>
 
 <h2 id="section2" data-i18n="section2.title">2. Information We Collect</h2>
 <p data-i18n="section2.desc">We may collect following types of information:</p>

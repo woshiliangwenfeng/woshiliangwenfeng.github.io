@@ -109,55 +109,104 @@ function switchLanguage(lang) {
     window.location.replace(url.toString());
 }
 
-function createLanguageSwitcher() {
+function createLanguageSwitcher(containerSelector = '.nav-language-switcher') {
     // 移除旧的切换器（如果存在）
-    const existingSwitcher = document.querySelector('.language-switcher');
+    const existingSwitcher = document.querySelector('.figma-language-switcher');
     if (existingSwitcher) {
         existingSwitcher.remove();
     }
 
-    const switcher = document.createElement('div');
-    switcher.className = 'language-switcher';
-    switcher.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 1001;
+    const isEnglish = currentLanguage === 'en';
+
+    const container = document.createElement('div');
+    container.className = 'figma-language-switcher';
+    container.style.cssText = `
+        display: flex;
+        align-items: center;
+        gap: 8px;
     `;
 
-    const button = document.createElement('button');
-    button.className = 'lang-switch-btn';
-    const displayLang = getLanguage();
-    button.textContent = displayLang === 'en' ? '中文' : 'English';
-
-    button.style.cssText = `
-        background: rgba(102, 126, 234, 0.8);
-        color: white;
-        border: none;
-        padding: 8px 16px;
-        border-radius: 20px;
-        cursor: pointer;
+    // 语言标签
+    const label = document.createElement('span');
+    label.className = 'figma-lang-label';
+    label.textContent = isEnglish ? 'EN' : 'ZH';
+    label.style.cssText = `
+        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
         font-size: 14px;
-        font-weight: 500;
-        transition: all 0.3s;
+        font-weight: 480;
+        color: #000000;
     `;
 
-    button.addEventListener('mouseenter', () => {
-        button.style.background = 'rgba(118, 75, 162, 0.9)';
-    });
+    // Checkbox 开关
+    const checkbox = document.createElement('input');
+    checkbox.className = 'figma-lang-checkbox';
+    checkbox.type = 'checkbox';
+    checkbox.checked = !isEnglish;
+    checkbox.style.cssText = `
+        width: 40px;
+        height: 22px;
+        appearance: none;
+        -webkit-appearance: none;
+        background: #e6e6e6;
+        border: none;
+        border-radius: 11px;
+        cursor: pointer;
+        position: relative;
+        transition: background 0.2s ease;
+    `;
 
-    button.addEventListener('mouseleave', () => {
-        button.style.background = 'rgba(102, 126, 234, 0.8)';
-    });
+    // 添加伪元素（滑块）
+    const style = document.createElement('style');
+    style.textContent = `
+        .figma-lang-checkbox::before {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            background: #ffffff;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.2s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        .figma-lang-checkbox:checked {
+            background: #000000;
+        }
+        .figma-lang-checkbox:checked::before {
+            transform: translateX(18px);
+        }
+        .figma-lang-checkbox:hover {
+            background: ${isEnglish ? '#d1d1d1' : '#1a1a1a'};
+        }
+    `;
+    container.appendChild(style);
 
-    button.addEventListener('click', () => {
-        const actualCurrentLang = getLanguage();
-        const newLang = actualCurrentLang === 'en' ? 'zh' : 'en';
+    // 点击切换语言
+    checkbox.addEventListener('change', () => {
+        const newLang = checkbox.checked ? 'zh' : 'en';
         switchLanguage(newLang);
     });
 
-    switcher.appendChild(button);
-    document.body.appendChild(switcher);
+    container.appendChild(label);
+    container.appendChild(checkbox);
+
+    // 尝试插入到指定容器
+    const targetContainer = document.querySelector(containerSelector);
+    if (targetContainer) {
+        targetContainer.appendChild(container);
+    } else {
+        // 如果找不到容器，回退到固定在右下角
+        container.style.position = 'fixed';
+        container.style.bottom = '24px';
+        container.style.right = '24px';
+        container.style.zIndex = '9999';
+        container.style.background = '#ffffff';
+        container.style.padding = '12px 16px';
+        container.style.borderRadius = '50px';
+        container.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.08)';
+        document.body.appendChild(container);
+    }
 }
 
 async function initI18n(pageName) {

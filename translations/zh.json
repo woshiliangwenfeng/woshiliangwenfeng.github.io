@@ -6,7 +6,7 @@
     "nav.about": "关于",
     "nav.contact": "联系我们",
     "nav.privacy": "隐私政策",
-    "footer.copyright": "© 2026 Game Guides Hub. 保留所有权利。",
+    "footer.copyright": "© 2026 G Hub. 保留所有权利。",
     "footer.privacy": "隐私政策"
   },
   "index": {
@@ -29,7 +29,7 @@
     "subtitle": "发现提升游戏体验的最佳软件"
   },
   "about": {
-    "title": "关于 Game Guides Hub",
+    "title": "关于 G Hub",
     "subtitle": "您值得信赖的专业游戏知识来源",
     "section.ourStory.title": "我们的故事",
     "section.mission.title": "🎯 我们的使命",
@@ -69,7 +69,7 @@
     "lastUpdated": "最后更新：2026年4月1日",
     "toc.title": "📋 目录",
     "section1.title": "1. 简介",
-    "section1.desc": "欢迎来到 Game Guides Hub。本隐私政策旨在告知您我们如何收集、使用、披露和保护您的个人信息。使用本网站即表示您同意本隐私政策的条款和条件。",
+    "section1.desc": "欢迎来到 G Hub。本隐私政策旨在告知您我们如何收集、使用、披露和保护您的个人信息。使用本网站即表示您同意本隐私政策的条款和条件。",
     "section2.title": "2. 我们收集的信息",
     "section2.desc": "我们可能收集以下类型的信息：",
     "section2.item1": "浏览数据：包括您的IP地址、浏览器类型、访问时间和访问的页面",

@@ -6,7 +6,7 @@
     "nav.about": "About",
     "nav.contact": "Contact",
     "nav.privacy": "Privacy",
-    "footer.copyright": "© 2026 Game Guides Hub. All rights reserved.",
+    "footer.copyright": "© 2026 G Hub. All rights reserved.",
     "footer.privacy": "Privacy Policy"
   },
   "index": {
@@ -29,7 +29,7 @@
     "subtitle": "Discover best software to enhance your gaming experience"
   },
   "about": {
-    "title": "About Game Guides Hub",
+    "title": "About G Hub",
     "subtitle": "Your trusted source for expert gaming knowledge",
     "section.ourStory.title": "Our Story",
     "section.mission.title": "🎯 Our Mission",
@@ -69,7 +69,7 @@
     "lastUpdated": "Last Updated: April 1, 2026",
     "toc.title": "📋 Table of Contents",
     "section1.title": "1. Introduction",
-    "section1.desc": "Welcome to Game Guides Hub. This privacy policy is intended to inform you about how we collect, use, disclose, and protect your personal information. By using this website, you agree to terms and conditions of this privacy policy.",
+    "section1.desc": "Welcome to G Hub. This privacy policy is intended to inform you about how we collect, use, disclose, and protect your personal information. By using this website, you agree to terms and conditions of this privacy policy.",
     "section2.title": "2. Information We Collect",
     "section2.desc": "We may collect following types of information:",
     "section2.item1": "Browsing Data: Including your IP address, browser type, access time, and pages visited",

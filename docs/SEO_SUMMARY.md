@@ -1,8 +1,8 @@
-# Game Guides Hub - SEO优化总结
+# G Hub - SEO优化总结
 
 ## 🎯 SEO优化概览
 
-本文档总结了为 Game Guides Hub 网站（https://woshiliangwenfeng.github.io）完成的全面 SEO 优化工作。
+本文档总结了为 G Hub 网站（https://woshiliangwenfeng.github.io）完成的全面 SEO 优化工作。
 
 ---
 

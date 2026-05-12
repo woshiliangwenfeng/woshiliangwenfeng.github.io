@@ -1,6 +1,6 @@
-# Game Guides Hub - SEO优化实施计划
+# G Hub - SEO优化实施计划
 
-**项目**: Game Guides Hub (https://woshiliangwenfeng.github.io/)
+**项目**: G Hub (https://woshiliangwenfeng.github.io/)
 **创建日期**: 2026-05-08
 **目标**: 从SEO评分4.3/5提升到4.8-5.0/5
 
@@ -35,7 +35,7 @@
 3. 创建1200x630像素的OG图片
    - 包含网站名称和logo
    - 使用品牌色系 (#667eea → #764ba2)
-   - 添加文字 "Game Guides Hub"
+   - 添加文字 "G Hub"
 4. 上传favicon.ico到根目录
 5. 上传og-image.jpg到根目录
 6. 测试在浏览器中显示
@@ -660,7 +660,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="页面描述150-160字符">
 <meta name="keywords" content="关键词1, 关键词2, 关键词3">
-<meta name="author" content="Game Guides Hub">
+<meta name="author" content="G Hub">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://woshiliangwenfeng.github.io/页面路径">
 
@@ -677,7 +677,7 @@
 <meta property="og:url" content="页面完整URL">
 <meta property="og:image" content="OG图片URL">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:site_name" content="Game Guides Hub">
+<meta property="og:site_name" content="G Hub">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
@@ -700,11 +700,11 @@
   "dateModified": "修改日期",
   "author": {
     "@type": "Organization",
-    "name": "Game Guides Hub"
+    "name": "G Hub"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Game Guides Hub",
+    "name": "G Hub",
     "url": "https://woshiliangwenfeng.github.io/"
   }
 }

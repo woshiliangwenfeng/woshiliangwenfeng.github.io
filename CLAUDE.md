@@ -52,7 +52,7 @@ The site is automatically deployed to GitHub Pages from the `main` branch. Push 
 1. Copy `guides/game-guide-template.html` as a new file in the `guides/` directory
 2. Replace template placeholders with actual content
 3. Update meta tags for SEO:
-   - Title: "[Game Name] [Guide Type] | Game Guides Hub"
+   - Title: "[Game Name] [Guide Type] | G Hub"
    - Description: Include game name, guide type, and key features
    - Keywords: Game name, genre, platform, guide-specific terms
 4. Update navigation links to use relative paths (`../pages/` for navigation)

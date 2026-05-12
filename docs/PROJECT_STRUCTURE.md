@@ -1,4 +1,4 @@
-# Game Guides Hub - 项目结构说明
+# G Hub - 项目结构说明
 
 ## 目录结构
 

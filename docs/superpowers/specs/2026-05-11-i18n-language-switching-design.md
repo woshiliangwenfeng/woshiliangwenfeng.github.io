@@ -1,14 +1,14 @@
 # 中英文语言切换功能设计文档
 
 **日期:** 2026-05-11
-**项目:** Game Guides Hub
+**项目:** G Hub
 **功能:** 页面中英文语言切换
 
 ---
 
 ## 1. 需求概述
 
-为 Game Guides Hub 添加中英文语言切换功能，允许用户在页面右上角独立切换语言，并记住用户的语言偏好。
+为 G Hub 添加中英文语言切换功能，允许用户在页面右上角独立切换语言，并记住用户的语言偏好。
 
 ### 功能需求
 
@@ -88,7 +88,7 @@
     "nav.about": "About",
     "nav.contact": "Contact",
     "lang.switch": "中文",
-    "footer.copyright": "© 2026 Game Guides Hub. All rights reserved.",
+    "footer.copyright": "© 2026 G Hub. All rights reserved.",
     "footer.privacy": "Privacy Policy"
   },
   "index": {

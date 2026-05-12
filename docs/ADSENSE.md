@@ -1,6 +1,6 @@
 # AdSense Setup Guide
 
-This guide explains how to integrate Google AdSense into the Game Guides Hub website.
+This guide explains how to integrate Google AdSense into the G Hub website.
 
 ## Ad Placement Strategy
 
