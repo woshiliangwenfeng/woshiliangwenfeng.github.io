@@ -222,20 +222,15 @@ function updateActiveNav(sectionId) {
 }
 
 function initScrollSpy() {
-    console.log('🚀 initScrollSpy called');
-
     // 等待 DOM 加载完成
     if (document.readyState === 'loading') {
-        console.log('⏳ DOM still loading, waiting for DOMContentLoaded...');
         document.addEventListener('DOMContentLoaded', initScrollSpy);
         return;
     }
 
     const sections = document.querySelectorAll('.section');
-    console.log(`👀 Found ${sections.length} sections with class 'section'`);
 
     if (sections.length === 0) {
-        console.warn('⚠️ No sections found, scroll spy disabled');
         return;
     }
 
@@ -249,29 +244,24 @@ function initScrollSpy() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const sectionId = entry.target.id;
-                console.log(`📍 Section entered: ${sectionId}`);
                 updateActiveNav(sectionId);
             }
         });
     }, observerOptions);
 
     sections.forEach(section => {
-        console.log(`🎯 Observing section: ${section.id}`);
         observer.observe(section);
     });
 
     // 初始化时设置第一个可见区块的导航状态
     if (sections[0] && sections[0].id) {
-        console.log(`🏠 Setting initial nav to: ${sections[0].id}`);
         updateActiveNav(sections[0].id);
     }
 }
 
 async function initI18n(pageName) {
-    console.log('🎬 initI18n called with page:', pageName);
     const lang = getLanguage();
     currentLanguage = lang;
-    console.log(`🌐 Language: ${lang}`);
 
     // 移除旧的调试信息（如果存在）
     const oldDebugInfo = document.getElementById('i18n-debug');
