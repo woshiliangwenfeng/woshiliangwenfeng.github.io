@@ -2,6 +2,25 @@ const SUPPORTED_LANGUAGES = ['en', 'zh'];
 const DEFAULT_LANGUAGE = 'en';
 const STORAGE_KEY = 'preferredLang';
 let currentLanguage = DEFAULT_LANGUAGE;
+let currentTranslations = null;
+
+function getTranslation(key, pageName = null) {
+    if (!currentTranslations) return key;
+
+    // 优先从 common 查找
+    let translation = getNestedValue(currentTranslations.common, key);
+
+    // 如果没找到且提供了 pageName，从页面对象中查找
+    if (!translation && pageName) {
+        let lookupKey = key;
+        if (key.startsWith(pageName + '.')) {
+            lookupKey = key.substring(pageName.length + 1);
+        }
+        translation = getNestedValue(currentTranslations[pageName] || {}, lookupKey);
+    }
+
+    return translation || key;
+}
 
 function getLanguage() {
     // 优先从 URL 参数读取
@@ -302,11 +321,13 @@ async function initI18n(pageName) {
 
     try {
         const translations = await loadTranslations(lang);
+        currentTranslations = translations;
         applyTranslations(translations, pageName);
     } catch (error) {
         console.error('Error applying translations:', error);
         if (lang !== DEFAULT_LANGUAGE) {
             const fallbackTranslations = await loadTranslations(DEFAULT_LANGUAGE);
+            currentTranslations = fallbackTranslations;
             applyTranslations(fallbackTranslations, pageName);
         }
     }

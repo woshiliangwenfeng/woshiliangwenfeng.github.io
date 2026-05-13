@@ -419,9 +419,45 @@
                         uploadZone.style.display = 'none';
                         selectedRegion = null;
                         downloadBtn.disabled = true;
+
+                        // 检测水印
+                        detectWatermark();
                     };
                 };
                 reader.readAsDataURL(file);
+            }
+
+            function detectWatermark() {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+
+                canvas.width = originalImage.naturalWidth;
+                canvas.height = originalImage.naturalHeight;
+
+                ctx.drawImage(originalImage, 0, 0);
+
+                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                const data = imageData.data;
+
+                let semiTransparentPixels = 0;
+                const totalPixels = canvas.width * canvas.height;
+
+                // 检测半透明像素（alpha 值在 30%-90% 之间）
+                for (let i = 3; i < data.length; i += 4) {
+                    const alpha = data[i] / 255;
+                    if (alpha > 0.3 && alpha < 0.9) {
+                        semiTransparentPixels++;
+                    }
+                }
+
+                const transparentRatio = semiTransparentPixels / totalPixels;
+
+                // 如果半透明像素超过 5%，认为可能有水印
+                if (transparentRatio > 0.05) {
+                    showStatus(getTranslation('watermark-remover.detection.detected', 'watermark-remover'), 'success');
+                } else {
+                    showStatus(getTranslation('watermark-remover.detection.notDetected', 'watermark-remover'), 'success');
+                }
             }
 
             function setupCanvas() {
@@ -482,7 +518,7 @@
                 isDragging = false;
 
                 if (selectedRegion.width > 10 && selectedRegion.height > 10) {
-                    showStatus('Watermark area selected. Click "Remove Watermark" to process.', 'success');
+                    showStatus(getTranslation('watermark-remover.selection.detected', 'watermark-remover'), 'success');
                 }
             });
 

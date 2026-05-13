@@ -119,6 +119,13 @@
       "process": "Remove Watermark",
       "download": "Download",
       "reset": "Reset"
+    },
+    "detection": {
+      "detected": "Watermark detected. Please select the watermark area to process.",
+      "notDetected": "No obvious watermark detected. Please manually select the area to process."
+    },
+    "selection": {
+      "detected": "Watermark area selected. Click \"Remove Watermark\" to process."
     }
   }
 }
