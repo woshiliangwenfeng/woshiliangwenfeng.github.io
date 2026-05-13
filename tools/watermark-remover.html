@@ -145,48 +145,20 @@
             height: 100%;
         }
 
-        .canvas-container canvas {
-            width: 100%;
-            height: 100%;
-            cursor: crosshair;
-        }
-
-        .controls {
-            display: flex;
-            gap: var(--spacing-md);
-            flex-wrap: wrap;
+        .processing-section {
+            background-color: var(--color-surface-soft);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
             margin-bottom: var(--spacing-xl);
         }
 
-        .intensity-slider {
-            flex: 1;
-            min-width: 200px;
+        .progress-container {
+            text-align: center;
         }
 
-        .intensity-slider label {
-            display: block;
-            font-family: var(--font-body);
-            font-size: 14px;
-            font-weight: 330;
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .intensity-slider input[type="range"] {
-            width: 100%;
-            height: 8px;
-            border-radius: 4px;
-            background: var(--color-hairline);
-            outline: none;
-            -webkit-appearance: none;
-        }
-
-        .intensity-slider input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
+        .progress-fill {
             background: var(--color-primary);
-            cursor: pointer;
+            transition: width 0.3s ease;
         }
 
         .actions {
@@ -199,29 +171,6 @@
             display: flex;
             gap: var(--spacing-md);
             margin-bottom: var(--spacing-md);
-        }
-
-        .instructions {
-            background-color: var(--color-block-cream);
-            padding: var(--spacing-lg);
-            border-radius: var(--radius-md);
-            margin-bottom: var(--spacing-xl);
-        }
-
-        .instructions h4 {
-            font-family: var(--font-display);
-            font-size: 16px;
-            font-weight: 540;
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .instructions ul {
-            padding-left: var(--spacing-lg);
-        }
-
-        .instructions li {
-            font-size: 14px;
-            margin-bottom: var(--spacing-xs);
         }
 
         .status-message {
@@ -272,17 +221,6 @@
     <!-- Tool Section -->
     <div id="tool" class="section">
         <div class="watermark-tool-container">
-            <!-- Instructions -->
-            <div class="instructions">
-                <h4 data-i18n="watermark-remover.instructions.title">How to use:</h4>
-                <ul>
-                    <li data-i18n="watermark-remover.instructions.step1">1. Upload an image with a watermark</li>
-                    <li data-i18n="watermark-remover.instructions.step2">2. Click and drag on the image to select the watermark area</li>
-                    <li data-i18n="watermark-remover.instructions.step3">3. Adjust the removal intensity using the slider</li>
-                    <li data-i18n="watermark-remover.instructions.step4">4. Click "Remove Watermark" and download the result</li>
-                </ul>
-            </div>
-
             <!-- Upload Zone -->
             <div class="upload-zone" id="uploadZone">
                 <div class="upload-zone-icon">📁</div>
@@ -290,6 +228,16 @@
                 <p class="typography-body-sm mb-md" data-i18n="watermark-remover.upload.subtitle">or click to browse</p>
                 <p class="typography-caption" data-i18n="watermark-remover.upload.supported">Supported formats: JPG, PNG, WebP</p>
                 <input type="file" class="file-input" id="fileInput" accept="image/jpeg,image/png,image/webp">
+            </div>
+
+            <!-- Processing Section -->
+            <div class="processing-section" id="processingSection" style="display: none;">
+                <div class="progress-container" style="margin-bottom: var(--spacing-lg);">
+                    <div class="progress-bar" style="height: 8px; background: var(--color-hairline); border-radius: 4px; overflow: hidden;">
+                        <div class="progress-fill" id="progressFill" style="height: 100%; background: var(--color-primary); width: 0%; transition: width 0.3s ease;"></div>
+                    </div>
+                    <p class="typography-caption mt-sm" id="progressText" style="text-align: center;">Loading models... (0%)</p>
+                </div>
             </div>
 
             <!-- Status Message -->
@@ -311,27 +259,15 @@
                         <h3 data-i18n="watermark-remover.preview.processed">Processed Image</h3>
                         <div class="image-container" id="processedContainer">
                             <img id="processedImage" src="" alt="Processed image">
-                            <div class="canvas-container" id="canvasContainer">
-                                <canvas id="selectionCanvas"></canvas>
-                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Controls -->
-                <div class="controls">
-                    <div class="intensity-slider">
-                        <label data-i18n="watermark-remover.controls.intensity">Removal Intensity: <span id="intensityValue">50</span>%</label>
-                        <input type="range" id="intensitySlider" min="1" max="100" value="50">
                     </div>
                 </div>
 
                 <!-- Actions -->
                 <div class="actions">
                     <div class="action-buttons">
-                        <button class="btn btn-primary" id="processBtn" data-i18n="watermark-remover.buttons.process">Remove Watermark</button>
-                        <button class="btn btn-secondary" id="downloadBtn" disabled data-i18n="watermark-remover.buttons.download">Download</button>
-                        <button class="btn btn-tertiary" id="resetBtn" data-i18n="watermark-remover.buttons.reset">Reset</button>
+                        <button class="btn btn-primary" id="downloadBtn" data-i18n="watermark-remover.buttons.download">Download</button>
+                        <button class="btn btn-secondary" id="resetBtn" data-i18n="watermark-remover.buttons.reset">Upload Another</button>
                     </div>
                 </div>
             </div>
@@ -365,21 +301,14 @@
             const uploadZone = document.getElementById('uploadZone');
             const fileInput = document.getElementById('fileInput');
             const previewSection = document.getElementById('previewSection');
+            const processingSection = document.getElementById('processingSection');
             const originalImage = document.getElementById('originalImage');
             const processedImage = document.getElementById('processedImage');
-            const selectionCanvas = document.getElementById('selectionCanvas');
-            const canvasContainer = document.getElementById('canvasContainer');
-            const intensitySlider = document.getElementById('intensitySlider');
-            const intensityValue = document.getElementById('intensityValue');
-            const processBtn = document.getElementById('processBtn');
             const downloadBtn = document.getElementById('downloadBtn');
             const resetBtn = document.getElementById('resetBtn');
             const statusMessage = document.getElementById('statusMessage');
-
-            let originalImageData = null;
-            let selectedRegion = null;
-            let isDragging = false;
-            let dragStart = { x: 0, y: 0 };
+            const progressFill = document.getElementById('progressFill');
+            const progressText = document.getElementById('progressText');
 
             // Upload zone events
             uploadZone.addEventListener('click', () => fileInput.click());
@@ -416,10 +345,8 @@
                     processedImage.src = e.target.result;
 
                     originalImage.onload = () => {
-                        setupCanvas();
                         previewSection.classList.add('active');
                         uploadZone.style.display = 'none';
-                        selectedRegion = null;
                         downloadBtn.disabled = true;
 
                         // 检测并自动去除水印
@@ -502,144 +429,6 @@
                 showStatus(getTranslation('watermark-remover.processing.success', 'watermark-remover'), 'success');
             }
 
-            function setupCanvas() {
-                const container = document.getElementById('processedContainer');
-                const rect = container.getBoundingClientRect();
-
-                selectionCanvas.width = rect.width;
-                selectionCanvas.height = rect.height;
-
-                const ctx = selectionCanvas.getContext('2d');
-                ctx.clearRect(0, 0, selectionCanvas.width, selectionCanvas.height);
-
-                // 显示选择canvas
-                canvasContainer.style.display = 'block';
-            }
-
-            // Canvas selection events
-            selectionCanvas.addEventListener('mousedown', (e) => {
-                const rect = selectionCanvas.getBoundingClientRect();
-                dragStart.x = e.clientX - rect.left;
-                dragStart.y = e.clientY - rect.top;
-                isDragging = true;
-            });
-
-            selectionCanvas.addEventListener('mousemove', (e) => {
-                if (!isDragging) return;
-
-                const rect = selectionCanvas.getBoundingClientRect();
-                const currentX = e.clientX - rect.left;
-                const currentY = e.clientY - rect.top;
-
-                const ctx = selectionCanvas.getContext('2d');
-                ctx.clearRect(0, 0, selectionCanvas.width, selectionCanvas.height);
-
-                const width = currentX - dragStart.x;
-                const height = currentY - dragStart.y;
-
-                ctx.strokeStyle = '#ff3d8b';
-                ctx.lineWidth = 2;
-                ctx.setLineDash([5, 5]);
-                ctx.fillStyle = 'rgba(255, 61, 139, 0.1)';
-
-                ctx.fillRect(dragStart.x, dragStart.y, width, height);
-                ctx.strokeRect(dragStart.x, dragStart.y, width, height);
-            });
-
-            selectionCanvas.addEventListener('mouseup', (e) => {
-                if (!isDragging) return;
-
-                const rect = selectionCanvas.getBoundingClientRect();
-                const endX = e.clientX - rect.left;
-                const endY = e.clientY - rect.top;
-
-                selectedRegion = {
-                    x: Math.min(dragStart.x, endX),
-                    y: Math.min(dragStart.y, endY),
-                    width: Math.abs(endX - dragStart.x),
-                    height: Math.abs(endY - dragStart.y)
-                };
-
-                isDragging = false;
-            });
-
-            selectionCanvas.addEventListener('mouseleave', () => {
-                if (isDragging) {
-                    isDragging = false;
-                }
-            });
-
-            function removeWatermark() {
-                const tempCtx = tempCanvas.getContext('2d');
-
-                tempCanvas.width = originalImage.naturalWidth;
-                tempCanvas.height = originalImage.naturalHeight;
-
-                tempCtx.drawImage(originalImage, 0, 0);
-
-                const imageData = tempCtx.getImageData(0, 0, tempCanvas.width, tempCanvas.height);
-                const data = imageData.data;
-
-                const scaleX = tempCanvas.width / selectionCanvas.width;
-                const scaleY = tempCanvas.height / selectionCanvas.height;
-
-                const startX = Math.floor(selectedRegion.x * scaleX);
-                const startY = Math.floor(selectedRegion.y * scaleY);
-                const endX = Math.floor((selectedRegion.x + selectedRegion.width) * scaleX);
-                const endY = Math.floor((selectedRegion.y + selectedRegion.height) * scaleY);
-
-                const intensity = parseInt(intensitySlider.value) / 100;
-
-                for (let y = startY; y < endY; y++) {
-                    for (let x = startX; x < endX; x++) {
-                        const index = (y * tempCanvas.width + x) * 4;
-
-                        const neighbors = getNeighborColors(data, x, y, tempCanvas.width, tempCanvas.height);
-                        data[index] = blendPixel(data[index], neighbors.r, intensity);
-                        data[index + 1] = blendPixel(data[index + 1], neighbors.g, intensity);
-                        data[index + 2] = blendPixel(data[index + 2], neighbors.b, intensity);
-                    }
-                }
-
-                tempCtx.putImageData(imageData, 0, 0);
-                processedImage.src = tempCanvas.toDataURL('image/png');
-
-                downloadBtn.disabled = false;
-                showStatus('Watermark removed successfully!', 'success');
-            }
-
-            function getNeighborColors(data, x, y, width, height) {
-                const directions = [
-                    [-1, 0], [1, 0], [0, -1], [0, 1],
-                    [-1, -1], [1, -1], [-1, 1], [1, 1]
-                ];
-
-                let totalR = 0, totalG = 0, totalB = 0, count = 0;
-
-                directions.forEach(([dx, dy]) => {
-                    const nx = x + dx;
-                    const ny = y + dy;
-
-                    if (nx >= 0 && nx < width && ny >= 0 && ny < height) {
-                        const index = (ny * width + nx) * 4;
-                        totalR += data[index];
-                        totalG += data[index + 1];
-                        totalB += data[index + 2];
-                        count++;
-                    }
-                });
-
-                return {
-                    r: count > 0 ? Math.floor(totalR / count) : 128,
-                    g: count > 0 ? Math.floor(totalG / count) : 128,
-                    b: count > 0 ? Math.floor(totalB / count) : 128
-                };
-            }
-
-            function blendPixel(current, neighbor, intensity) {
-                return Math.floor(current * (1 - intensity) + neighbor * intensity);
-            }
-
             // Download button
             downloadBtn.addEventListener('click', () => {
                 const link = document.createElement('a');
@@ -652,12 +441,9 @@
             resetBtn.addEventListener('click', () => {
                 previewSection.classList.remove('active');
                 uploadZone.style.display = 'block';
-                selectedRegion = null;
                 downloadBtn.disabled = true;
                 fileInput.value = '';
-
-                const ctx = selectionCanvas.getContext('2d');
-                ctx.clearRect(0, 0, selectionCanvas.width, selectionCanvas.height);
+                processedImage.src = '';
 
                 showStatus('', '');
             });
@@ -671,13 +457,6 @@
                 statusMessage.textContent = message;
                 statusMessage.className = 'status-message active ' + type;
             }
-
-            // Handle window resize
-            window.addEventListener('resize', () => {
-                if (previewSection.classList.contains('active')) {
-                    setupCanvas();
-                }
-            });
         }
     </script>
 </body>
