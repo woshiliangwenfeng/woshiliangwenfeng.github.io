@@ -420,8 +420,8 @@
                         selectedRegion = null;
                         downloadBtn.disabled = true;
 
-                        // 检测水印
-                        detectWatermark();
+                        // 检测并自动去除水印
+                        detectAndRemoveWatermark();
                     };
                 };
                 reader.readAsDataURL(file);
@@ -453,11 +453,51 @@
                 const transparentRatio = semiTransparentPixels / totalPixels;
 
                 // 如果半透明像素超过 5%，认为可能有水印
-                if (transparentRatio > 0.05) {
+                return transparentRatio > 0.05;
+            }
+
+            function detectAndRemoveWatermark() {
+                const hasWatermark = detectWatermark();
+
+                if (hasWatermark) {
                     showStatus(getTranslation('watermark-remover.detection.detected', 'watermark-remover'), 'success');
+
+                    // 自动去除水印
+                    setTimeout(() => {
+                        autoRemoveWatermark();
+                    }, 500);
                 } else {
                     showStatus(getTranslation('watermark-remover.detection.notDetected', 'watermark-remover'), 'success');
                 }
+            }
+
+            function autoRemoveWatermark() {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+
+                canvas.width = originalImage.naturalWidth;
+                canvas.height = originalImage.naturalHeight;
+
+                ctx.drawImage(originalImage, 0, 0);
+
+                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                const data = imageData.data;
+
+                // 找到所有半透明像素并去除它们
+                for (let i = 3; i < data.length; i += 4) {
+                    const alpha = data[i];
+
+                    // 如果是半透明像素（alpha 值在 30%-90% 之间），设为完全透明
+                    if (alpha > 76 && alpha < 229) {
+                        data[i] = 0; // 设 alpha 为 0（完全透明）
+                    }
+                }
+
+                ctx.putImageData(imageData, 0, 0);
+                processedImage.src = canvas.toDataURL('image/png');
+                downloadBtn.disabled = false;
+
+                showStatus(getTranslation('watermark-remover.processing.success', 'watermark-remover'), 'success');
             }
 
             function setupCanvas() {
@@ -469,6 +509,9 @@
 
                 const ctx = selectionCanvas.getContext('2d');
                 ctx.clearRect(0, 0, selectionCanvas.width, selectionCanvas.height);
+
+                // 显示选择canvas
+                canvasContainer.style.display = 'block';
             }
 
             // Canvas selection events
@@ -516,10 +559,6 @@
                 };
 
                 isDragging = false;
-
-                if (selectedRegion.width > 10 && selectedRegion.height > 10) {
-                    showStatus(getTranslation('watermark-remover.selection.detected', 'watermark-remover'), 'success');
-                }
             });
 
             selectionCanvas.addEventListener('mouseleave', () => {
@@ -528,23 +567,7 @@
                 }
             });
 
-            // Intensity slider
-            intensitySlider.addEventListener('input', (e) => {
-                intensityValue.textContent = e.target.value;
-            });
-
-            // Process button
-            processBtn.addEventListener('click', () => {
-                if (!selectedRegion || selectedRegion.width < 10 || selectedRegion.height < 10) {
-                    showStatus('Please select a watermark area first.', 'error');
-                    return;
-                }
-
-                removeWatermark();
-            });
-
             function removeWatermark() {
-                const tempCanvas = document.createElement('canvas');
                 const tempCtx = tempCanvas.getContext('2d');
 
                 tempCanvas.width = originalImage.naturalWidth;
