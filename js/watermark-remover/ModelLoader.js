@@ -6,6 +6,7 @@ class ModelLoader {
         this.detectorModel = null;
         this.inpainterModel = null;
         this.isLoaded = false;
+        this.isLoading = false;
     }
 
     /**
@@ -18,27 +19,52 @@ class ModelLoader {
             return;
         }
 
-        try {
-            // Load detector model (40% of total load time)
-            onProgress(20);
-            this.detectorModel = await ort.InferenceSession.create(
-                '/js/models/watermark-detector.onnx',
-                { executionProviders: ['webgl', 'wasm'] }
-            );
-            onProgress(40);
+        // Prevent concurrent loading
+        if (this.isLoading) {
+            return;
+        }
+        this.isLoading = true;
 
-            // Load inpainter model (60% of total load time)
-            onProgress(60);
-            this.inpainterModel = await ort.InferenceSession.create(
-                '/js/models/lama-inpainter.onnx',
-                { executionProviders: ['webgl', 'wasm'] }
+        // Callback validation
+        if (typeof onProgress !== 'function') {
+            console.warn('onProgress is not a function, progress reporting disabled');
+            onProgress = () => {};
+        }
+
+        try {
+            onProgress(10);
+
+            // Timeout handling
+            const timeout = new Promise((_, reject) =>
+                setTimeout(() => reject(new Error('Model loading timeout (30s)')), 30000)
             );
+
+            // Load detector model
+            this.detectorModel = await Promise.race([
+                ort.InferenceSession.create(
+                    '/js/models/watermark-detector.onnx',
+                    { executionProviders: ['webgl', 'wasm'] }
+                ),
+                timeout
+            ]);
+            onProgress(50);
+
+            // Load inpainter model
+            this.inpainterModel = await Promise.race([
+                ort.InferenceSession.create(
+                    '/js/models/lama-inpainter.onnx',
+                    { executionProviders: ['webgl', 'wasm'] }
+                ),
+                timeout
+            ]);
             onProgress(100);
 
             this.isLoaded = true;
         } catch (error) {
             this.isLoaded = false;
             throw new Error(`Failed to load models: ${error.message}`);
+        } finally {
+            this.isLoading = false;
         }
     }
 
