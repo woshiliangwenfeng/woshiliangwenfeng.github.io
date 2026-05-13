@@ -29,7 +29,13 @@
     "subtitle": "发现提升游戏体验的最佳软件",
     "section.eyebrow": "软件推荐",
     "section.title": "提升您的配置",
-    "section.subtitle": "从性能优化到社区建设，这些工具将改变您的游戏、录制和分享方式。"
+    "section.subtitle": "从性能优化到社区建设，这些工具将改变您的游戏、录制和分享方式。",
+    "card.title": "水印去除工具",
+    "card.desc": "快速轻松地去除图片中的水印",
+    "card.feature1": "100% 免费",
+    "card.feature2": "安全可靠",
+    "card.feature3": "即时处理",
+    "card.button": "立即尝试"
   },
   "about": {
     "title": "关于 G Hub",

@@ -50,8 +50,24 @@ async function loadTranslations(lang) {
 }
 
 function getNestedValue(obj, path) {
-    // 翻译使用扁平键结构（如 "nav.home"），直接访问
-    return obj[path] || null;
+    // 优先检查扁平键（如 "nav.home"）
+    if (path in obj) {
+        return obj[path];
+    }
+
+    // 支持嵌套键结构（如 "watermark-remover.instructions.title"）
+    const keys = path.split('.');
+    let value = obj;
+
+    for (const key of keys) {
+        if (value && typeof value === "object" && key in value) {
+            value = value[key];
+        } else {
+            return null;
+        }
+    }
+
+    return value;
 }
 
 function applyTranslations(translations, pageName) {
@@ -60,7 +76,12 @@ function applyTranslations(translations, pageName) {
         let translation = getNestedValue(translations.common, key);
 
         if (!translation) {
-            translation = getNestedValue(translations[pageName] || {}, key);
+            // 如果 key 以 pageName 开头，去掉前缀
+            let lookupKey = key;
+            if (key.startsWith(pageName + '.')) {
+                lookupKey = key.substring(pageName.length + 1);
+            }
+            translation = getNestedValue(translations[pageName] || {}, lookupKey);
         }
 
         if (translation) {
@@ -72,7 +93,11 @@ function applyTranslations(translations, pageName) {
         const key = element.getAttribute('data-i18n-placeholder');
         let translation = getNestedValue(translations.common, key);
         if (!translation) {
-            translation = getNestedValue(translations[pageName] || {}, key);
+            let lookupKey = key;
+            if (key.startsWith(pageName + '.')) {
+                lookupKey = key.substring(pageName.length + 1);
+            }
+            translation = getNestedValue(translations[pageName] || {}, lookupKey);
         }
         if (translation) {
             element.placeholder = translation;
@@ -83,7 +108,11 @@ function applyTranslations(translations, pageName) {
         const key = element.getAttribute('data-i18n-title');
         let translation = getNestedValue(translations.common, key);
         if (!translation) {
-            translation = getNestedValue(translations[pageName] || {}, key);
+            let lookupKey = key;
+            if (key.startsWith(pageName + '.')) {
+                lookupKey = key.substring(pageName.length + 1);
+            }
+            translation = getNestedValue(translations[pageName] || {}, lookupKey);
         }
         if (translation) {
             element.title = translation;
@@ -283,5 +312,11 @@ async function initI18n(pageName) {
     }
 
     createLanguageSwitcher();
-    initScrollSpy();
+
+    // 错误处理：确保 initScrollSpy 失败不影响语言切换器
+    try {
+        initScrollSpy();
+    } catch (error) {
+        console.error('Error initializing scroll spy:', error);
+    }
 }

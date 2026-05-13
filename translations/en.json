@@ -29,7 +29,13 @@
     "subtitle": "Discover best software to enhance your gaming experience",
     "section.eyebrow": "SOFTWARE RECOMMENDATIONS",
     "section.title": "Level up your setup",
-    "section.subtitle": "From performance optimization to community building, these tools transform how you play, record, and share."
+    "section.subtitle": "From performance optimization to community building, these tools transform how you play, record, and share.",
+    "card.title": "Watermark Remover",
+    "card.desc": "Remove watermarks from images instantly",
+    "card.feature1": "100% Free",
+    "card.feature2": "Safe & Reliable",
+    "card.feature3": "Instant Processing",
+    "card.button": "Try Now"
   },
   "about": {
     "title": "About G Hub",
