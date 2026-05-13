@@ -17,6 +17,24 @@ class WatermarkRemover {
         this.attachEventListeners();
     }
 
+    checkBrowserCompatibility() {
+        const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        const isEdge = /Edg/.test(navigator.userAgent);
+        const isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
+
+        // Check for WebGL support
+        const canvas = document.createElement('canvas');
+        const hasWebGL = !!(canvas.getContext('webgl') || canvas.getContext('experimental-webgl'));
+
+        if (!hasWebGL) {
+            this.showStatus('WebGL not supported. Please use Chrome, Edge, or Safari with WebGL enabled.', 'error');
+            this.uploadZone.style.display = 'block';
+            return false;
+        }
+
+        return true;
+    }
+
     initializeElements() {
         this.uploadZone = document.getElementById('uploadZone');
         this.fileInput = document.getElementById('fileInput');
@@ -75,6 +93,12 @@ class WatermarkRemover {
     async processImage(file) {
         if (this.isProcessing) return;
         this.isProcessing = true;
+
+        // 添加浏览器兼容性检查
+        if (!this.checkBrowserCompatibility()) {
+            this.isProcessing = false;
+            return;
+        }
 
         try {
             // Hide upload zone, show processing section
@@ -156,11 +180,18 @@ class WatermarkRemover {
     }
 
     async loadModels() {
-        return new Promise((resolve, reject) => {
+        // 创建超时 Promise
+        const timeoutPromise = new Promise((_, reject) =>
+            setTimeout(() => reject(new Error('Processing timeout (30s)')), 30000)
+        );
+
+        // 使用 Promise.race 在加载和超时之间竞争
+        return Promise.race([
             this.modelLoader.loadModels((progress) => {
                 this.updateProgress(progress * 0.4, `Loading models... (${Math.round(progress)}%)`);
-            }).then(resolve).catch(reject);
-        });
+            }),
+            timeoutPromise
+        ]);
     }
 
     updateProgress(percent, text) {
