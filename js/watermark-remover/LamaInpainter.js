@@ -14,6 +14,12 @@ class LamaInpainter {
      * @returns {Float32Array} - Inpainted image tensor
      */
     static async inpaint(model, imageTensor, maskTensor, height, width) {
+        // Input validation
+        if (!model) throw new Error('Model cannot be null or undefined');
+        if (!(imageTensor instanceof Float32Array)) throw new Error('imageTensor must be Float32Array');
+        if (!(maskTensor instanceof Float32Array)) throw new Error('maskTensor must be Float32Array');
+        if (height <= 0 || width <= 0) throw new Error('Height and width must be positive');
+
         try {
             // Prepare input tensors
             const imageInput = new ort.Tensor('float32', imageTensor, [1, 3, height, width]);
@@ -25,7 +31,10 @@ class LamaInpainter {
                 mask: maskInput
             });
 
-            // Get output tensor [1, 3, H, W]
+            // Validate output
+            if (!outputs || !outputs.output) {
+                throw new Error('Model did not produce expected output');
+            }
             const outputTensor = outputs.output;
             const outputData = outputTensor.data;
 

@@ -34,28 +34,29 @@ class ModelLoader {
         try {
             onProgress(10);
 
-            // Timeout handling
-            const timeout = new Promise((_, reject) =>
-                setTimeout(() => reject(new Error('Model loading timeout (30s)')), 30000)
-            );
+            // Create timeout wrapper function to generate fresh timeout Promises
+            const createTimeout = (message) =>
+                new Promise((_, reject) =>
+                    setTimeout(() => reject(new Error(message)), 30000)
+                );
 
-            // Load detector model
+            // Load detector model with independent timeout
             this.detectorModel = await Promise.race([
                 ort.InferenceSession.create(
                     '/js/models/watermark-detector.onnx',
                     { executionProviders: ['webgl', 'wasm'] }
                 ),
-                timeout
+                createTimeout('Detector model loading timeout (30s)')
             ]);
             onProgress(50);
 
-            // Load inpainter model
+            // Load inpainter model with independent timeout
             this.inpainterModel = await Promise.race([
                 ort.InferenceSession.create(
                     '/js/models/lama-inpainter.onnx',
                     { executionProviders: ['webgl', 'wasm'] }
                 ),
-                timeout
+                createTimeout('Inpainter model loading timeout (30s)')
             ]);
             onProgress(100);
 
